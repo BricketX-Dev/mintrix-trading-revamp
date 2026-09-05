@@ -221,90 +221,287 @@ export default function ProductsClient() {
   </div>
 </section>
 
-      {/* ─── SOURCING ADVANTAGE ─── */}
-      <section className="px-[5%] py-24 bg-[#0b0b0a] border-y border-white/5 relative">
-        <div className="max-w-[1240px] mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="lg:col-span-5">
-              <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-4">
-                <span className="w-8 h-[1px] bg-[#cea945]/60" />
-                <span className="text-[#cea945] text-[10px] md:text-xs font-bold uppercase tracking-[0.25em]">Sourcing Advantage</span>
+{/* ─── SOURCING ADVANTAGE ─── */}
+      <section className="px-[5%] py-28 sm:py-36 md:py-40 bg-[#0b0b0a] border-y border-white/5 relative overflow-hidden select-none">
+        
+        {/* ─── CONTAINER TERMINAL & COMMODITY BACKGROUND ─── */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/images/products/sourcing-bg.webp"
+            alt="Mintrix Global Port Consolidation & Logistics"
+            fill
+            sizes="100vw"
+            quality={92}
+            className="object-cover object-right md:object-center opacity-45 scale-105"
+          />
+
+          {/* Left-to-right fade: maintains deep contrast behind the editorial headline */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b0b0a] via-[#0b0b0a]/85 to-[#0b0b0a]/40" />
+
+          {/* Top & bottom melts into adjacent sections */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a] via-transparent to-[#0b0b0a]" />
+
+          {/* Subtle gold ambient glow over the port sunset */}
+          <div className="absolute top-1/3 right-1/4 w-[600px] h-[350px] bg-[#cea945]/[0.06] blur-[150px] rounded-full pointer-events-none" />
+        </div>
+
+        <div className="max-w-[1280px] mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Left Column: Strategic Overview */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={staggerContainer}
+              className="lg:col-span-5"
+            >
+              <motion.div variants={fadeInUp} className="flex items-center gap-3.5 mb-5">
+                <span className="w-8 sm:w-10 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
+                <span className="text-[#cea945] text-[10.5px] sm:text-xs font-bold uppercase tracking-[0.28em] drop-shadow-[0_0_10px_rgba(206,169,69,0.35)]">
+                  Sourcing Advantage
+                </span>
               </motion.div>
-              <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-serif leading-[1.1] mb-6">
-                One sourcing partner across every category.
+
+              <motion.h2
+                variants={fadeInUp}
+                className="text-3xl sm:text-4xl lg:text-[2.85rem] font-serif font-bold text-white leading-[1.12] mb-6 tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]"
+              >
+                One sourcing partner across{" "}
+                <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
+                  every category.
+                </span>
               </motion.h2>
-              <motion.p variants={fadeInUp} className="text-[#a89f8b] leading-relaxed font-light">
-                Buying multiple commodity types usually means managing multiple suppliers. Mintrix Trading consolidates that into a single relationship: one trade manager, one documentation process and one quality standard, whichever category you're ordering.
+
+              <motion.p
+                variants={fadeInUp}
+                className="text-[#cfc8ba] leading-[1.8] text-[15px] sm:text-[16px] font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
+              >
+                Buying multiple commodity types usually means managing fragmented suppliers and disjointed logistics. Mintrix Trading consolidates that into a single relationship: one trade desk, uniform export documentation, and standardized quality verification across every origin port.
               </motion.p>
             </motion.div>
 
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="lg:col-span-7 grid gap-4">
+            {/* Right Column: 4 Consolidator Advantage Cards */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={staggerContainer}
+              className="lg:col-span-7 grid gap-4 sm:gap-4.5"
+            >
               {[
-                "Consistent grading and moisture/purity testing across every commodity",
-                "One export documentation set (Halal, FDA, COO, phytosanitary) regardless of product mix",
-                "Mixed-category container consolidation to reduce freight cost on smaller orders",
-                "A single 24-hour quotation covering every product on your order, not one per category"
-              ].map((text, i) => (
-                <motion.div key={i} variants={fadeInUp} className="flex items-start gap-5 p-6 rounded-xl bg-[#16221c]/40 border border-white/5 hover:bg-[#21332a]/60 hover:border-[#cea945]/30 transition-all duration-300">
-                  <div className="w-8 h-8 rounded-full bg-[#cea945]/10 border border-[#cea945]/30 flex items-center justify-center shrink-0 mt-0.5">
-                    <span className="text-[#cea945] font-bold text-xs">{i + 1}</span>
+                {
+                  title: "Consistent Quality Verification",
+                  desc: "Uniform grading, moisture thresholds, and purity testing executed across every origin prior to vessel booking.",
+                },
+                {
+                  title: "Unified Export Documentation",
+                  desc: "One coordinated dossier (Halal, FDA, Certificate of Origin, phytosanitary) regardless of commodity mix.",
+                },
+                {
+                  title: "Mixed-Category Consolidation",
+                  desc: "Consolidated container packing across diverse product divisions to optimize freight economics on targeted orders.",
+                },
+                {
+                  title: "Single 24-Hour Commercial Quotation",
+                  desc: "A singular commercial quotation encompassing all line items on your requisition with complete CIF/FOB terms.",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeInUp}
+                  className="group relative flex items-start gap-5 p-5 sm:p-6 rounded-2xl bg-[#0e1511]/85 backdrop-blur-md border border-white/[0.08] shadow-[0_15px_35px_rgba(0,0,0,0.75)] hover:border-[#cea945]/50 hover:bg-[#121c17]/90 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                >
+                  {/* Gold hairline indicator on hover */}
+                  <div className="absolute top-0 left-0 bottom-0 w-[2.5px] bg-gradient-to-b from-[#cea945] via-[#eed484] to-[#cea945] scale-y-0 group-hover:scale-y-100 transition-transform duration-400 origin-top" />
+
+                  {/* Numeral Badge */}
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/[0.04] border border-[#cea945]/30 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#cea945] group-hover:border-[#cea945] transition-all duration-300">
+                    <span className="text-[#cea945] group-hover:text-[#0b0b0a] font-serif font-bold text-xs sm:text-sm">
+                      0{i + 1}
+                    </span>
                   </div>
-                  <p className="text-[#cfc8ba] text-[14px] leading-[1.7]">{text}</p>
+
+                  {/* Text Content */}
+                  <div>
+                    <h3 className="font-serif font-bold text-[16.5px] sm:text-[17.5px] text-white mb-1.5 group-hover:text-[#cea945] transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-[#cfc8ba] text-[13.5px] sm:text-[14px] leading-[1.7] font-light">
+                      {item.desc}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
+
           </div>
         </div>
       </section>
 
       {/* ─── FAQ & FINAL CTA ─── */}
-      <section className="px-[5%] py-24 bg-[#111a15] relative overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#21332a]/20 blur-[120px] pointer-events-none rounded-full" />
-        
-        <div className="max-w-[840px] mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold font-serif mb-5">Common questions about bulk food sourcing</h2>
-            <div className="w-12 h-[2px] bg-[#cea945] mx-auto" />
+{/* ─── FAQ & FINAL CTA ─── */}
+      <section className="px-[5%] py-24 sm:py-32 bg-[#0b0b0a] relative overflow-hidden select-none border-t border-white/5">
+        {/* Subtle Ambient Section Glows */}
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#21332a]/20 blur-[140px] pointer-events-none rounded-full" />
+        <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[400px] bg-[#cea945]/[0.035] blur-[150px] pointer-events-none rounded-full" />
+
+        <div className="max-w-[1240px] mx-auto relative z-10">
+          {/* FAQ Header */}
+          <div className="text-center max-w-[840px] mx-auto mb-16 sm:mb-20">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="w-8 sm:w-10 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
+              <span className="text-[#cea945] text-[10.5px] sm:text-xs font-bold uppercase tracking-[0.28em] drop-shadow-[0_0_10px_rgba(206,169,69,0.35)]">
+                General Procurement
+              </span>
+              <span className="w-8 sm:w-10 h-[1px] bg-gradient-to-l from-transparent to-[#cea945]" />
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.65rem] font-bold font-serif text-white tracking-tight leading-[1.15]">
+              Common questions about{" "}
+              <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
+                bulk food sourcing.
+              </span>
+            </h2>
           </div>
 
-          <div className="space-y-4 mb-24">
+          {/* FAQ Accordion (Max width constrained for optimal readability) */}
+          <div className="max-w-[880px] mx-auto space-y-4 mb-24 sm:mb-32">
             {faqsData.map((faq, i) => {
               const isOpen = openFAQ === i;
               return (
-                <div key={i} className="border border-white/5 rounded-xl bg-[#0b0b0a]/60 overflow-hidden transition-all duration-300 hover:border-[#cea945]/30">
+                <div
+                  key={i}
+                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                    isOpen
+                      ? "bg-[#111714]/90 border-[#cea945]/40 shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
+                      : "bg-[#0e1511]/70 border-white/[0.08] hover:border-white/20 hover:bg-[#111714]/60"
+                  }`}
+                >
                   <button
                     onClick={() => setOpenFAQ(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between text-left p-6 sm:px-8 cursor-pointer group"
+                    className="w-full flex items-center justify-between text-left p-6 sm:px-8 cursor-pointer group gap-4"
                   >
-                    <span className="font-bold text-[15px] sm:text-[17px] text-white group-hover:text-[#cea945] transition-colors">{faq.q}</span>
-                    <span className="shrink-0 w-8 h-8 rounded-full bg-[#21332a] flex items-center justify-center text-[#cea945] transition-transform duration-300" style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}>
+                    <span
+                      className={`font-serif text-[16px] sm:text-[18px] font-bold transition-colors duration-300 leading-snug ${
+                        isOpen ? "text-[#cea945]" : "text-white group-hover:text-[#eed484]"
+                      }`}
+                    >
+                      {faq.q}
+                    </span>
+                    <span
+                      className={`shrink-0 w-8 h-8 rounded-xl border flex items-center justify-center text-sm transition-all duration-300 ${
+                        isOpen
+                          ? "bg-[#cea945] border-[#cea945] text-[#0b0b0a]"
+                          : "bg-white/[0.03] border-white/10 text-[#cea945] group-hover:border-[#cea945]/50"
+                      }`}
+                      style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+                    >
                       +
                     </span>
                   </button>
-                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                    <p className="px-6 sm:px-8 pb-6 text-[14px] sm:text-[15px] text-[#a89f8b] leading-[1.7]">
-                      {faq.a}
-                    </p>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      isOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="px-6 sm:px-8 pb-6 pt-0 border-t border-white/[0.05]">
+                      <p className="pt-4 text-[14px] sm:text-[15px] text-[#cfc8ba] leading-[1.8] font-light">
+                        {faq.a}
+                      </p>
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
 
-          {/* Final CTA */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="p-10 md:p-16 rounded-2xl bg-[#0b0b0a] border border-[#cea945]/20 text-center shadow-2xl relative overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-[#21332a]/40 to-transparent pointer-events-none" />
-            <div className="relative z-10">
-              <h3 className="text-2xl md:text-[32px] font-bold font-serif mb-5 leading-tight">Don't see your product listed?<br/>Ask us anyway.</h3>
-              <p className="text-[#a89f8b] text-[15px] mb-10 max-w-lg mx-auto leading-relaxed">
-                Mintrix Trading sources beyond these categories on request. Tell us the product, volume and destination, and we'll confirm within the hour whether we can source it.
-              </p>
-              <Link
-                href="/#quote"
-                className="inline-block bg-[#cea945] text-[#0b0b0a] font-bold text-xs uppercase tracking-[0.2em] px-10 py-4 rounded-[2px] transition-all duration-300 hover:bg-white hover:text-[#0b0b0a] shadow-[0_10px_20px_rgba(206,169,69,0.2)]"
+          {/* ─── FINAL CTA (Full-Width Executive Horizontal Banner) ─── */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={fadeInUp}
+            className="group relative rounded-3xl border border-white/[0.1] bg-[#0c130f] p-8 sm:p-12 md:p-16 lg:p-20 overflow-hidden shadow-[0_30px_70px_-15px_rgba(0,0,0,0.9)]"
+          >
+            {/* Background Image Layer & Multi-Stop Dissolves */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+              <Image
+                src="/images/about/cta-bg.webp"
+                alt="Global Food Commodity Sourcing Desk"
+                fill
+                sizes="(max-width: 1240px) 100vw, 1240px"
+                quality={90}
+                className="object-cover object-right opacity-40 transition-transform duration-1000 ease-out group-hover:scale-105"
+              />
+
+              {/* Horizontal fade: solid backdrop on the left for crisp copy readability */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0c130f] via-[#0c130f]/90 to-transparent" />
+
+              {/* Vertical edge fades */}
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0c130f]/60 via-transparent to-[#0c130f]/80" />
+            </div>
+
+            {/* Top gold ambient hairline accent */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#cea945]/70 to-transparent" />
+
+            {/* Content Grid */}
+            <div className="relative z-10 grid lg:grid-cols-[1.2fr_auto] gap-10 lg:gap-16 items-center">
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="w-8 sm:w-10 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
+                  <span className="text-[#cea945] text-[10.5px] sm:text-xs font-bold uppercase tracking-[0.28em] drop-shadow-[0_0_10px_rgba(206,169,69,0.35)]">
+                    Direct Trade Desk
+                  </span>
+                </div>
+
+                <h2 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[46px] text-white leading-[1.12] mb-5 tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+                  A food trading company in Dubai{" "}
+                  <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
+                    you can verify.
+                  </span>
+                </h2>
+
+                <p className="text-[#cfc8ba] text-sm sm:text-base md:text-[16.5px] max-w-xl leading-[1.8] font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                  Since 2016, Mintrix Trading has built its name on verifiable origin documentation, rigid pre-shipment inspections, and commercial response times you can rely on. Send us your requirements to receive a formal quotation within 24 hours.
+                </p>
+              </div>
+
+              {/* Action Buttons & Operational Badges */}
+              <div className="flex flex-col gap-4 min-w-[240px] sm:min-w-[280px]">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-3 bg-[#cea945] text-[#0b0b0a] font-bold text-xs uppercase tracking-[0.22em] px-8 py-4 sm:py-5 rounded-lg transition-all duration-300 hover:bg-white hover:shadow-[0_6px_25px_rgba(206,169,69,0.35)] shadow-[0_4px_16px_rgba(206,169,69,0.2)] cursor-pointer"
+                >
+              <span>Request a Quote</span>
+              <svg
+                className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                Request a Quote
-              </Link>
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+                </Link>
+
+                <Link
+                  href="/products"
+                  className="inline-flex items-center justify-center gap-3 border border-white/20 bg-[#0b0b0a]/50 backdrop-blur-sm text-white font-bold text-xs uppercase tracking-[0.22em] px-8 py-4 sm:py-5 rounded-lg transition-all duration-300 hover:border-[#cea945] hover:text-[#cea945] cursor-pointer"
+                >
+                  <span>Explore Products</span>
+                </Link>
+
+                {/* Sub-CTA Trust Indicator */}
+                <div className="pt-2 flex items-center justify-center gap-2 text-[10.5px] uppercase tracking-wider text-[#a89f8b] font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#cea945]" />
+                  <span>24h Commercial Response Guaranteed</span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

@@ -53,8 +53,8 @@ const staggerContainer: Variants = {
 };
 
 const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 22 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
 };
 
 export default function ContactClient() {
@@ -110,14 +110,14 @@ export default function ContactClient() {
   };
 
   const inputClasses =
-    "w-full bg-[#080d0a]/90 border border-white/[0.1] text-white placeholder-[#858074] px-4 py-3.5 rounded-lg outline-none hover:border-white/25 focus:border-[#cea945] focus:bg-[#0e1511] transition-all duration-200 text-[14px] shadow-[inset_0_1.5px_3px_rgba(0,0,0,0.6)] disabled:opacity-50";
+    "w-full bg-[#080d0a]/90 border border-white/[0.1] text-white placeholder-[#858074] px-3.5 sm:px-4 py-3 sm:py-3.5 rounded-xl outline-none hover:border-white/25 focus:border-[#cea945] focus:bg-[#0e1511] transition-all duration-200 text-[16px] sm:text-[14px] shadow-[inset_0_1.5px_3px_rgba(0,0,0,0.6)] disabled:opacity-50 touch-manipulation";
   const labelClasses =
-    "block text-[10.5px] font-bold text-[#b5ad9a] uppercase tracking-[0.18em] mb-2";
+    "block text-[10px] sm:text-[10.5px] font-bold text-[#b5ad9a] uppercase tracking-[0.2em] mb-1.5 sm:mb-2";
 
   return (
-    <main className="bg-[#0b0b0a] min-h-screen pt-28 sm:pt-36 lg:pt-44 pb-20 sm:pb-28 relative overflow-hidden text-white">
+    <main className="bg-[#0b0b0a] min-h-screen pt-24 sm:pt-36 lg:pt-40 pb-16 sm:pb-28 relative overflow-hidden text-white">
       {/* ─── Hero Background Visual (Port / Global Maritime) ─── */}
-      <div className="absolute top-0 left-0 right-0 h-[480px] md:h-[600px] pointer-events-none select-none overflow-hidden z-0">
+      <div className="absolute top-0 left-0 right-0 h-[420px] sm:h-[500px] lg:h-[600px] pointer-events-none select-none overflow-hidden z-0">
         <Image
           src="/images/map.jpg"
           alt="Global Maritime Port Map"
@@ -127,13 +127,13 @@ export default function ContactClient() {
           quality={90}
           className="object-cover object-center opacity-20 scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a]/70 via-[#0b0b0a]/90 to-[#0b0b0a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a]/60 via-[#0b0b0a]/90 to-[#0b0b0a]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_transparent_0%,_#0b0b0a_80%)]" />
       </div>
 
       {/* Atmospheric Accent Lighting */}
-      <div className="absolute top-24 left-1/2 -translate-x-1/2 w-[600px] sm:w-[900px] h-[350px] bg-[#cea945]/[0.05] blur-[140px] pointer-events-none rounded-full" />
-      <div className="absolute top-[45%] right-0 w-[450px] h-[450px] bg-[#21332a]/30 blur-[160px] pointer-events-none rounded-full" />
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[340px] sm:w-[700px] lg:w-[900px] h-[250px] sm:h-[350px] bg-[#cea945]/[0.05] blur-[120px] sm:blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute top-[45%] right-0 w-[300px] sm:w-[450px] h-[450px] bg-[#21332a]/30 blur-[150px] pointer-events-none rounded-full" />
 
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* ─── Editorial Header ─── */}
@@ -141,19 +141,19 @@ export default function ContactClient() {
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="text-center max-w-[840px] mx-auto mb-12 sm:mb-16 md:mb-20"
+          className="text-center max-w-[840px] mx-auto mb-10 sm:mb-16 md:mb-20"
         >
-          <motion.div variants={fadeInUp} className="flex items-center justify-center gap-3.5 mb-5 sm:mb-6">
-            <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
-            <span className="text-[#cea945] text-[10px] sm:text-[11.5px] font-bold uppercase tracking-[0.28em] drop-shadow-[0_0_10px_rgba(206,169,69,0.3)]">
+          <motion.div variants={fadeInUp} className="flex items-center justify-center gap-3 mb-3.5 sm:mb-5">
+            <span className="w-6 sm:w-12 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
+            <span className="text-[#cea945] text-[9.5px] sm:text-[11px] font-bold uppercase tracking-[0.28em] drop-shadow-[0_0_10px_rgba(206,169,69,0.3)]">
               Direct Trade Desk
             </span>
-            <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-l from-transparent to-[#cea945]" />
+            <span className="w-6 sm:w-12 h-[1px] bg-gradient-to-l from-transparent to-[#cea945]" />
           </motion.div>
 
           <motion.h1
             variants={fadeInUp}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-bold font-serif leading-[1.08] tracking-tight mb-5 sm:mb-6"
+            className="text-2.5xl sm:text-4xl md:text-5xl lg:text-[4rem] font-bold font-serif leading-[1.12] tracking-tight mb-3.5 sm:mb-5"
           >
             Direct access to our{" "}
             <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
@@ -163,242 +163,53 @@ export default function ContactClient() {
 
           <motion.p
             variants={fadeInUp}
-            className="text-[#cfc8ba] text-sm sm:text-base md:text-lg leading-[1.7] sm:leading-[1.75] font-light max-w-[640px] mx-auto px-2"
+            className="text-[#cfc8ba] text-[13.5px] sm:text-base md:text-lg leading-[1.65] sm:leading-[1.75] font-light max-w-[620px] mx-auto"
           >
             Operating from Dubai across 50+ origin ports. Submit specifications for prompt vessel allocation, MOQs, and FOB/CIF commercial pricing.
           </motion.p>
         </motion.div>
 
-        {/* ─── Main Two-Column Structure ─── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-14 items-start">
-          {/* ─── LEFT COLUMN: Desk Status, Authority & Credentials (Span 5) ─── */}
+        {/* ─── Main Two-Column Structure (Mobile Order Inverted) ─── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-start">
+          
+          {/* ─── RIGHT/FORM COLUMN (Rendered 1st on Mobile, 2nd on Desktop) ─── */}
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="lg:col-span-5 space-y-5 sm:space-y-6"
-          >
-            {/* Live Operational Status Card */}
-            <motion.div
-              variants={fadeInUp}
-              className="p-5 sm:p-6 rounded-2xl bg-[#111714]/90 border border-white/[0.08] shadow-xl backdrop-blur-md relative overflow-hidden"
-            >
-              <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/[0.08]">
-                <div className="flex items-center gap-2.5">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#cea945] opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#cea945]" />
-                  </span>
-                  <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-white">
-                    Trade Desk Status
-                  </span>
-                </div>
-                <span className="text-[10px] sm:text-[10.5px] font-mono font-bold text-[#cea945] bg-[#cea945]/10 px-2.5 py-0.5 rounded border border-[#cea945]/30">
-                  Active
-                </span>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                <div>
-                  <span className="block text-[10px] text-[#a89f8b] uppercase tracking-wider font-semibold mb-1">
-                    Dubai Time
-                  </span>
-                  <span className="text-[12px] sm:text-[13px] font-mono text-white tracking-tight">
-                    {dubaiTime || "12:00:00 GST"}
-                  </span>
-                </div>
-                <div>
-                  <span className="block text-[10px] text-[#a89f8b] uppercase tracking-wider font-semibold mb-1">
-                    Response Window
-                  </span>
-                  <span className="text-[12px] sm:text-[13px] text-white font-medium">
-                    &lt; 24h Guaranteed
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Direct Contact Points */}
-            <motion.div
-              variants={fadeInUp}
-              className="p-6 sm:p-7 rounded-2xl bg-[#111714]/90 border border-white/[0.08] space-y-5 backdrop-blur-md"
-            >
-              <h3 className="text-[10.5px] font-bold uppercase tracking-[0.22em] text-[#a89f8b] pb-2.5 border-b border-white/[0.06]">
-                Direct Contacts
-              </h3>
-
-              <div className="space-y-4">
-                <a
-                  href="tel:+971541662352"
-                  className="flex items-start gap-4 text-white hover:text-[#cea945] transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 group-hover:border-[#cea945]/40 transition-colors">
-                    <PhoneIcon />
-                  </div>
-                  <div>
-                    <span className="block text-[10.5px] text-[#a89f8b] uppercase tracking-wider font-medium">
-                      Direct Trade Line
-                    </span>
-                    <span className="text-[14px] sm:text-[15px] font-medium text-white tracking-wide">
-                      +971 54 166 2352
-                    </span>
-                  </div>
-                </a>
-
-                <a
-                  href="mailto:info@mintrixtrading.com"
-                  className="flex items-start gap-4 text-white hover:text-[#cea945] transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 group-hover:border-[#cea945]/40 transition-colors">
-                    <MailIcon />
-                  </div>
-                  <div>
-                    <span className="block text-[10.5px] text-[#a89f8b] uppercase tracking-wider font-medium">
-                      Commercial Inquiries
-                    </span>
-                    <span className="text-[14px] sm:text-[15px] font-medium text-white tracking-wide break-all">
-                      info@mintrixtrading.com
-                    </span>
-                  </div>
-                </a>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0">
-                    <MapPinIcon />
-                  </div>
-                  <div>
-                    <span className="block text-[10.5px] text-[#a89f8b] uppercase tracking-wider font-medium">
-                      Headquarters
-                    </span>
-                    <span className="text-[13px] sm:text-[13.5px] text-[#cfc8ba] leading-relaxed block font-light">
-                      Office No. 101-182, Muhammad Abdullah Property,<br />
-                      Deira – Hor Al Anz, Dubai, UAE
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Visual Operational Hub Card */}
-            <motion.div
-              variants={fadeInUp}
-              className="group relative h-48 sm:h-52 rounded-2xl overflow-hidden border border-white/[0.1] shadow-2xl"
-            >
-              <Image
-                src="/images/products/hero-bg.webp"
-                alt="Dubai Logistics Operations"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0a] via-[#0b0b0a]/65 to-transparent" />
-
-              <div className="absolute bottom-4 left-5 right-5 flex items-end justify-between">
-                <div>
-                  <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#cea945] block mb-1">
-                    Logistics Gateway
-                  </span>
-                  <h4 className="text-white font-serif text-[16px] sm:text-[17px] font-bold leading-tight">
-                    Jebel Ali Port &amp; Air Cargo Network
-                  </h4>
-                </div>
-                <div className="w-8 h-8 rounded-full bg-[#111714]/90 backdrop-blur-sm border border-white/15 flex items-center justify-center text-[#cea945] text-xs">
-                  ↗
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Procurement Assurances Card */}
-            <motion.div
-              variants={fadeInUp}
-              className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#111714] to-[#14201a] border border-[#cea945]/25 relative overflow-hidden"
-            >
-              <div className="flex items-center gap-2.5 mb-3 text-[#cea945]">
-                <ShieldCheckIcon />
-                <span className="text-[11px] font-bold uppercase tracking-[0.2em]">
-                  B2B Trade Protocol
-                </span>
-              </div>
-              <ul className="space-y-2.5 text-[12px] sm:text-[12.5px] text-[#cfc8ba] font-light">
-                <li className="flex items-center gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#cea945] shrink-0" />
-                  <span>SGS / Bureau Veritas pre-shipment inspection on demand</span>
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#cea945] shrink-0" />
-                  <span>LC (Letter of Credit) &amp; verified escrow trade finance accepted</span>
-                </li>
-                <li className="flex items-center gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#cea945] shrink-0" />
-                  <span>Phytosanitary, Halal, COO, and FDA-compliant documentation</span>
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Social Channels */}
-            <motion.div variants={fadeInUp} className="flex items-center justify-between pt-1 px-1">
-              <span className="text-[10.5px] uppercase tracking-[0.2em] text-[#a89f8b] font-medium">
-                Verified Channels
-              </span>
-              <div className="flex items-center gap-2.5">
-                {[
-                  { href: "https://www.facebook.com/mintrixtrading", label: "Facebook", icon: <FacebookIcon /> },
-                  { href: "https://www.linkedin.com/company/mintrix-trading/", label: "LinkedIn", icon: <LinkedInIcon /> },
-                  { href: "https://www.instagram.com/mintrixtrading/", label: "Instagram", icon: <InstagramIcon /> },
-                ].map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    className="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/[0.08] flex items-center justify-center text-white/70 hover:border-[#cea945]/60 hover:bg-[#cea945] hover:text-[#0b0b0a] transition-all"
-                  >
-                    {s.icon}
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* ─── RIGHT COLUMN: Commercial Dossier Form (Span 7) ─── */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-            className="lg:col-span-7"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="order-1 lg:order-2 lg:col-span-7"
           >
-            <div className="bg-[#111714]/95 border border-white/[0.1] rounded-2xl p-6 sm:p-9 lg:p-10 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.85)] relative backdrop-blur-md">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-[#cea945]/[0.03] blur-[90px] pointer-events-none" />
+            <div className="bg-[#111714]/95 border border-white/[0.1] rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.85)] relative backdrop-blur-md">
+              <div className="absolute top-0 right-0 w-44 h-44 bg-[#cea945]/[0.03] blur-[80px] pointer-events-none" />
 
-              <div className="mb-7 sm:mb-8 pb-5 sm:pb-6 border-b border-white/[0.08]">
-                <span className="text-[10px] sm:text-[10.5px] font-bold text-[#cea945] uppercase tracking-[0.25em] block mb-1.5">
+              <div className="mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-white/[0.08]">
+                <span className="text-[10px] font-bold text-[#cea945] uppercase tracking-[0.25em] block mb-1">
                   Inquiry Form
                 </span>
-                <h2 className="font-serif font-bold text-2xl sm:text-3xl text-white tracking-tight">
+                <h2 className="font-serif font-bold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
                   Request Wholesale Quotation
                 </h2>
-                <p className="text-[13px] sm:text-[13.5px] text-[#a89f8b] font-light mt-1.5">
+                <p className="text-[12.5px] sm:text-[13.5px] text-[#a89f8b] font-light mt-1">
                   Complete this dossier to receive itemized CIF/FOB pricing, packing specs, and lead times.
                 </p>
               </div>
 
               {isSuccess ? (
-                <div className="bg-[#14201a] border border-[#cea945]/30 rounded-xl p-8 sm:p-10 text-center my-6">
-                  <div className="w-14 h-14 bg-[#cea945]/10 border border-[#cea945]/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-6 h-6 text-[#cea945]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <div className="bg-[#14201a] border border-[#cea945]/30 rounded-xl p-6 sm:p-10 text-center my-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#cea945]/10 border border-[#cea945]/30 rounded-full flex items-center justify-center mx-auto mb-3.5">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#cea945]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="font-serif font-bold text-2xl text-white mb-2">
+                  <h3 className="font-serif font-bold text-xl sm:text-2xl text-white mb-2">
                     Inquiry Transmitted
                   </h3>
-                  <p className="text-[14px] text-[#cfc8ba] max-w-md mx-auto font-light leading-relaxed mb-6">
+                  <p className="text-[13.5px] sm:text-[14px] text-[#cfc8ba] max-w-md mx-auto font-light leading-relaxed mb-6">
                     Your requirements have been logged at the Dubai trade desk. A trade manager will contact you with commercial terms within 24 hours.
                   </p>
                   <button
                     onClick={() => setIsSuccess(false)}
-                    className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#cea945] hover:text-white transition-colors"
+                    className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#cea945] hover:text-white transition-colors cursor-pointer"
                   >
                     Submit Another Inquiry &rarr;
                   </button>
@@ -406,12 +217,12 @@ export default function ContactClient() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                   {errorMessage && (
-                    <div className="bg-red-500/10 border border-red-500/20 text-red-200 text-[13px] p-4 rounded-lg">
+                    <div className="bg-red-500/10 border border-red-500/20 text-red-200 text-[12.5px] p-3.5 rounded-lg">
                       {errorMessage}
                     </div>
                   )}
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className={labelClasses}>
                         Full Name <span className="text-[#cea945]">*</span>
@@ -434,7 +245,7 @@ export default function ContactClient() {
                         type="text"
                         name="company"
                         required
-                        placeholder="e.g. Al-Noor Import &amp; Export"
+                        placeholder="e.g. Al-Noor Import & Export"
                         className={inputClasses}
                         disabled={isSubmitting}
                       />
@@ -516,7 +327,7 @@ export default function ContactClient() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className={labelClasses}>
                         Discharge Port / Destination <span className="text-[#cea945]">*</span>
@@ -565,11 +376,11 @@ export default function ContactClient() {
                     />
                   </div>
 
-                  <div className="pt-2 sm:pt-3">
+                  <div className="pt-2">
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#cea945] hover:bg-white text-[#0b0b0a] font-bold text-[12px] sm:text-[12.5px] uppercase tracking-[0.22em] py-4 rounded-lg transition-all duration-300 shadow-[0_4px_20px_rgba(206,169,69,0.25)] flex items-center justify-center gap-3 disabled:opacity-60 cursor-pointer"
+                      className="w-full bg-[#cea945] hover:bg-white text-[#0b0b0a] font-bold text-xs uppercase tracking-[0.22em] py-4 rounded-xl transition-all duration-300 shadow-[0_4px_20px_rgba(206,169,69,0.25)] flex items-center justify-center gap-3 disabled:opacity-60 cursor-pointer active:scale-[0.99]"
                     >
                       {isSubmitting ? (
                         "Transmitting to Trade Desk..."
@@ -580,7 +391,7 @@ export default function ContactClient() {
                         </>
                       )}
                     </button>
-                    <p className="text-[10.5px] sm:text-[11px] text-[#8e8778] text-center mt-3 font-light">
+                    <p className="text-[10px] sm:text-[11px] text-[#8e8778] text-center mt-3 font-light">
                       Non-disclosure assured. Commercial inquiries are held under strict trade confidence.
                     </p>
                   </div>
@@ -588,6 +399,197 @@ export default function ContactClient() {
               )}
             </div>
           </motion.div>
+
+          {/* ─── LEFT COLUMN: Credentials & Desk Status (Rendered 2nd on Mobile) ─── */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="order-2 lg:order-1 lg:col-span-5 space-y-4 sm:space-y-6"
+          >
+            {/* Live Operational Status Card */}
+            <motion.div
+              variants={fadeInUp}
+              className="p-5 sm:p-6 rounded-2xl bg-[#111714]/90 border border-white/[0.08] shadow-xl backdrop-blur-md relative overflow-hidden"
+            >
+              <div className="flex items-center justify-between pb-3.5 mb-3.5 border-b border-white/[0.08]">
+                <div className="flex items-center gap-2.5">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#cea945] opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#cea945]" />
+                  </span>
+                  <span className="text-[10.5px] font-bold uppercase tracking-[0.2em] text-white">
+                    Trade Desk Status
+                  </span>
+                </div>
+                <span className="text-[10px] font-mono font-bold text-[#cea945] bg-[#cea945]/10 px-2 py-0.5 rounded border border-[#cea945]/30">
+                  Active
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <span className="block text-[10px] text-[#a89f8b] uppercase tracking-wider font-semibold mb-0.5">
+                    Dubai Time
+                  </span>
+                  <span className="text-[12px] sm:text-[13px] font-mono text-white tracking-tight">
+                    {dubaiTime || "12:00:00 GST"}
+                  </span>
+                </div>
+                <div>
+                  <span className="block text-[10px] text-[#a89f8b] uppercase tracking-wider font-semibold mb-0.5">
+                    Response Window
+                  </span>
+                  <span className="text-[12px] sm:text-[13px] text-white font-medium">
+                    &lt; 24h Guaranteed
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Direct Contact Points */}
+            <motion.div
+              variants={fadeInUp}
+              className="p-5 sm:p-7 rounded-2xl bg-[#111714]/90 border border-white/[0.08] space-y-4 sm:space-y-5 backdrop-blur-md"
+            >
+              <h3 className="text-[10.5px] font-bold uppercase tracking-[0.22em] text-[#a89f8b] pb-2 border-b border-white/[0.06]">
+                Direct Contacts
+              </h3>
+
+              <div className="space-y-3.5 sm:space-y-4">
+                <a
+                  href="tel:+971541662352"
+                  className="flex items-start gap-3.5 text-white hover:text-[#cea945] transition-colors group"
+                >
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 group-hover:border-[#cea945]/40 transition-colors">
+                    <PhoneIcon />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] text-[#a89f8b] uppercase tracking-wider font-medium">
+                      Direct Trade Line
+                    </span>
+                    <span className="text-[13.5px] sm:text-[15px] font-medium text-white tracking-wide">
+                      +971 54 166 2352
+                    </span>
+                  </div>
+                </a>
+
+                <a
+                  href="mailto:info@mintrixtrading.com"
+                  className="flex items-start gap-3.5 text-white hover:text-[#cea945] transition-colors group"
+                >
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 group-hover:border-[#cea945]/40 transition-colors">
+                    <MailIcon />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] text-[#a89f8b] uppercase tracking-wider font-medium">
+                      Commercial Inquiries
+                    </span>
+                    <span className="text-[13.5px] sm:text-[15px] font-medium text-white tracking-wide break-all">
+                      info@mintrixtrading.com
+                    </span>
+                  </div>
+                </a>
+
+                <div className="flex items-start gap-3.5">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0">
+                    <MapPinIcon />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] text-[#a89f8b] uppercase tracking-wider font-medium">
+                      Headquarters
+                    </span>
+                    <span className="text-[12.5px] sm:text-[13.5px] text-[#cfc8ba] leading-relaxed block font-light">
+                      Office No. 101-182, Muhammad Abdullah Property,<br />
+                      Deira – Hor Al Anz, Dubai, UAE
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Visual Operational Hub Card */}
+            <motion.div
+              variants={fadeInUp}
+              className="group relative h-40 sm:h-48 rounded-2xl overflow-hidden border border-white/[0.1] shadow-xl"
+            >
+              <Image
+                src="/images/contact/side-img.webp"
+                alt="Dubai Logistics Operations"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0a] via-[#0b0b0a]/65 to-transparent" />
+
+              <div className="absolute bottom-3.5 left-4 right-4 sm:bottom-4 sm:left-5 sm:right-5 flex items-end justify-between">
+                <div>
+                  <span className="text-[9.5px] uppercase font-bold tracking-[0.2em] text-[#cea945] block mb-0.5">
+                    Logistics Gateway
+                  </span>
+                  <h4 className="text-white font-serif text-[15px] sm:text-[17px] font-bold leading-tight">
+                    Jebel Ali Port &amp; Air Cargo Network
+                  </h4>
+                </div>
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#111714]/90 backdrop-blur-sm border border-white/15 flex items-center justify-center text-[#cea945] text-xs shrink-0">
+                  ↗
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Procurement Assurances Card */}
+            <motion.div
+              variants={fadeInUp}
+              className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#111714] to-[#14201a] border border-[#cea945]/25 relative overflow-hidden"
+            >
+              <div className="flex items-center gap-2 mb-2.5 text-[#cea945]">
+                <ShieldCheckIcon />
+                <span className="text-[10.5px] font-bold uppercase tracking-[0.2em]">
+                  B2B Trade Protocol
+                </span>
+              </div>
+              <ul className="space-y-2 text-[11.5px] sm:text-[12.5px] text-[#cfc8ba] font-light">
+                <li className="flex items-center gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#cea945] shrink-0" />
+                  <span>SGS / Bureau Veritas pre-shipment inspection on demand</span>
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#cea945] shrink-0" />
+                  <span>LC (Letter of Credit) &amp; verified escrow trade finance accepted</span>
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#cea945] shrink-0" />
+                  <span>Phytosanitary, Halal, COO, and FDA-compliant documentation</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Social Channels */}
+            <motion.div variants={fadeInUp} className="flex items-center justify-between pt-1 px-1">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#a89f8b] font-medium">
+                Verified Channels
+              </span>
+              <div className="flex items-center gap-2">
+                {[
+                  { href: "https://www.facebook.com/mintrixtrading", label: "Facebook", icon: <FacebookIcon /> },
+                  { href: "https://www.linkedin.com/company/mintrix-trading/", label: "LinkedIn", icon: <LinkedInIcon /> },
+                  { href: "https://www.instagram.com/mintrixtrading/", label: "Instagram", icon: <InstagramIcon /> },
+                ].map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    className="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/[0.08] flex items-center justify-center text-white/70 hover:border-[#cea945]/60 hover:bg-[#cea945] hover:text-[#0b0b0a] transition-all"
+                  >
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+
         </div>
       </div>
     </main>

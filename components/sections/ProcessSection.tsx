@@ -9,36 +9,42 @@ const steps = [
     title: "Client Inquiry",
     description:
       "Send your product, quantity, specification and destination. A dedicated trade manager confirms within the hour.",
+    icon: "/images/home/process-section/client-inquiry.svg",
   },
   {
     idx: "02",
     title: "Origin Research",
     description:
       "Our sourcing team finds the best available origin right now — quality, pricing, certifications and lead times.",
+    icon: "/images/home/process-section/origin-research.svg",
   },
   {
     idx: "03",
     title: "Quotation in 24h",
     description:
       "You receive a competitive quote with full specification sheet, packing format, certifications and delivery timeline.",
+    icon: "/images/home/process-section/quotation.svg",
   },
   {
     idx: "04",
     title: "Quality Verification",
     description:
       "Inspection at origin: grade testing, moisture analysis, packaging and batch-label review.",
+    icon: "/images/home/process-section/quality-verification.svg",
   },
   {
     idx: "05",
     title: "Export Documentation",
     description:
       "Halal, FDA, Certificate of Origin, phytosanitary, fumigation, packing list and Bill of Lading — all prepared for you.",
+    icon: "/images/home/process-section/export-documentation.svg",
   },
   {
     idx: "06",
     title: "Shipping & Live Tracking",
     description:
       "Goods loaded in 20ft/40ft dry or reefer containers, with live tracking to your destination port.",
+    icon: "/images/home/process-section/shipping.svg",
   },
 ];
 
@@ -65,7 +71,7 @@ export default function ProcessSection() {
       {/* ─── CONTAINER TERMINAL BACKGROUND ─── */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image
-          src="/images/home/pattern.jpg"
+          src="/images/home/Pattern-01.png"
           alt="Container Logistics and Port Sourcing"
           fill
           sizes="100vw"
@@ -79,7 +85,7 @@ export default function ProcessSection() {
         {/* Radial vignette: Keeps the content plane high-contrast */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_25%,_#0b0b0a_85%)]" />
 
-        {/* Ambient warm flare: Accentuates the natural backlight of the photography */}
+        {/* Ambient warm flare */}
         <div className="absolute top-1/4 right-1/4 w-[550px] h-[350px] bg-[#cea945]/[0.05] blur-[150px] rounded-full pointer-events-none" />
       </div>
 
@@ -112,12 +118,27 @@ export default function ProcessSection() {
         >
           {steps.map((step) => (
             <motion.div key={step.idx} variants={cardVariants} className="h-full">
-              <div className="group relative bg-[#0e1511]/85 backdrop-blur-md border border-white/[0.08] p-7 sm:p-9 rounded-2xl transition-all duration-500 hover:border-[#cea945]/50 hover:bg-[#121c17]/90 hover:-translate-y-1.5 hover:shadow-[0_22px_45px_-10px_rgba(0,0,0,0.85)] flex flex-col h-full overflow-hidden">
-                {/* Subtle top gold accent sweep on hover */}
+              <div className="group relative bg-[#0e1511]/85 backdrop-blur-md border border-white/[0.08] p-7 sm:p-9 rounded-2xl transition-all duration-500 hover:border-[#cea945]/50 hover:bg-[#121c17]/90 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_-10px_rgba(0,0,0,0.9)] flex flex-col h-full overflow-hidden">
+                
+                {/* ─── Corner Light-Leak Shaded Gradient (Blooms on Hover) ─── */}
+                <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gradient-to-br from-[#cea945]/0 via-[#cea945]/5 to-transparent group-hover:from-[#cea945]/20 group-hover:via-[#cea945]/10 group-hover:scale-125 transition-all duration-700 pointer-events-none blur-2xl" />
+
+                {/* Top Border Accent Line */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#cea945] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
 
-                {/* Giant Ambient Watermark Number */}
-                <div className="absolute -bottom-3 -right-2 text-[100px] sm:text-[120px] font-serif font-bold text-white/[0.03] group-hover:text-[#cea945]/[0.07] transition-colors duration-500 pointer-events-none leading-none select-none">
+                {/* ─── Watermarked Silhouette Icon (Shifted Top-Right Behind) ─── */}
+                <div className="absolute -top-3 -right-3 w-32 h-32 pointer-events-none select-none transition-all duration-700 ease-out opacity-[0.06] group-hover:opacity-[0.16] group-hover:scale-110 group-hover:-rotate-3">
+                  <Image
+                    src={step.icon}
+                    alt=""
+                    fill
+                    sizes="128px"
+                    className="object-contain filter invert sepia saturate-[5] hue-rotate-[5deg] brightness-[1.1]"
+                  />
+                </div>
+
+                {/* Subtle Ambient Watermark Number (Anchored Bottom Right) */}
+                <div className="absolute -bottom-4 -right-2 text-[90px] sm:text-[110px] font-serif font-bold text-white/[0.02] group-hover:text-[#cea945]/[0.05] transition-colors duration-500 pointer-events-none leading-none select-none">
                   {step.idx}
                 </div>
 
@@ -138,6 +159,7 @@ export default function ProcessSection() {
                     {step.description}
                   </p>
                 </div>
+
               </div>
             </motion.div>
           ))}
