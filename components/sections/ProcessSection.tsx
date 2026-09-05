@@ -120,30 +120,25 @@ export default function ProcessSection() {
             <motion.div key={step.idx} variants={cardVariants} className="h-full">
               <div className="group relative bg-[#0e1511]/85 backdrop-blur-md border border-white/[0.08] p-7 sm:p-9 rounded-2xl transition-all duration-500 hover:border-[#cea945]/50 hover:bg-[#121c17]/90 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_-10px_rgba(0,0,0,0.9)] flex flex-col h-full overflow-hidden">
                 
-                {/* ─── Corner Light-Leak Shaded Gradient (Blooms on Hover) ─── */}
-                <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gradient-to-br from-[#cea945]/0 via-[#cea945]/5 to-transparent group-hover:from-[#cea945]/20 group-hover:via-[#cea945]/10 group-hover:scale-125 transition-all duration-700 pointer-events-none blur-2xl" />
+                {/* ─── Top Border Accent Line Sweep ─── */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#cea945] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center z-20" />
 
-                {/* Top Border Accent Line */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#cea945] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+                {/* ─── Bottom-Right Radial Warmth Bloom on Hover ─── */}
+                <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-[#cea945]/0 group-hover:bg-[#cea945]/15 blur-2xl transition-all duration-700 pointer-events-none" />
 
-                {/* ─── Watermarked Silhouette Icon (Shifted Top-Right Behind) ─── */}
-                <div className="absolute -top-3 -right-3 w-32 h-32 pointer-events-none select-none transition-all duration-700 ease-out opacity-[0.06] group-hover:opacity-[0.16] group-hover:scale-110 group-hover:-rotate-3">
+                {/* ─── REPLACED: Process Icon Watermark Positioned in Bottom-Right Corner ─── */}
+                <div className="absolute -bottom-3 -right-3 w-28 h-28 sm:w-32 sm:h-32 pointer-events-none select-none transition-all duration-700 ease-out opacity-[0.08] group-hover:opacity-[0.22] group-hover:scale-110 group-hover:-rotate-3">
                   <Image
                     src={step.icon}
                     alt=""
                     fill
                     sizes="128px"
-                    className="object-contain filter invert sepia saturate-[5] hue-rotate-[5deg] brightness-[1.1]"
+                    className="object-contain filter invert sepia saturate-[5] hue-rotate-[5deg] brightness-[1.15]"
                   />
                 </div>
 
-                {/* Subtle Ambient Watermark Number (Anchored Bottom Right) */}
-                <div className="absolute -bottom-4 -right-2 text-[90px] sm:text-[110px] font-serif font-bold text-white/[0.02] group-hover:text-[#cea945]/[0.05] transition-colors duration-500 pointer-events-none leading-none select-none">
-                  {step.idx}
-                </div>
-
-                {/* Step Pill & Connector Line */}
-                <div className="flex items-center gap-4 mb-6 relative z-10">
+                {/* Step Pill & Connector Line (Clean Header) */}
+                <div className="flex items-center gap-4 mb-7 relative z-10">
                   <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-[#cea945]/30 flex items-center justify-center text-[#cea945] font-bold text-sm group-hover:bg-[#cea945] group-hover:text-[#0b0b0a] group-hover:border-[#cea945] transition-all duration-300 shadow-sm">
                     {step.idx}
                   </div>
@@ -151,7 +146,7 @@ export default function ProcessSection() {
                 </div>
 
                 {/* Step Narrative */}
-                <div className="relative z-10 flex flex-col flex-grow">
+                <div className="relative z-10 flex flex-col flex-grow pr-4">
                   <h3 className="text-[19px] sm:text-[20px] font-serif font-bold text-white mb-2.5 group-hover:text-[#cea945] transition-colors duration-300 leading-snug">
                     {step.title}
                   </h3>

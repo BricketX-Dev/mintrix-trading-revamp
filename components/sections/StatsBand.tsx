@@ -62,7 +62,7 @@ export default function StatsBand() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-14 gap-x-2 md:divide-x divide-white/10 text-center items-start">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-2 md:divide-x divide-white/10 text-center items-center">
           {stats.map((stat, idx) => (
             <motion.div
               key={stat.label}
@@ -70,13 +70,15 @@ export default function StatsBand() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="px-2 flex flex-col items-center justify-start group"
+              className="px-2 flex flex-col items-center justify-center group"
             >
-              {/* Metallic Gold Gradient Text */}
-              <div className="text-[2.5rem] lg:text-[2.75rem] font-bold font-serif bg-clip-text text-transparent bg-gradient-to-b from-[#f7e7b4] via-[#cea945] to-[#a97c2c] leading-none mb-4 transform group-hover:scale-105 transition-transform duration-500 drop-shadow-sm">
-                {stat.value}
+              {/* Metallic Gold Gradient Text (Kept Strictly in 1 Line) */}
+              <div className="text-[2.25rem] sm:text-[2.5rem] lg:text-[2.65rem] font-bold font-serif bg-clip-text text-transparent bg-gradient-to-b from-[#f7e7b4] via-[#cea945] to-[#a97c2c] leading-none mb-3 transform group-hover:scale-105 transition-transform duration-500 drop-shadow-sm whitespace-nowrap flex items-baseline justify-center">
+                <span>{stat.value}</span>
                 {stat.suffix && (
-                  <span className="block mt-1">{stat.suffix}</span>
+                  <span className="text-[0.48em] font-sans font-bold tracking-wider ml-1.5 align-baseline opacity-90">
+                    {stat.suffix}
+                  </span>
                 )}
               </div>
               
