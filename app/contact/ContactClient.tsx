@@ -272,7 +272,7 @@ export default function ContactClient() {
                     </span>
                     <span className="text-[13px] sm:text-[13.5px] text-[#cfc8ba] leading-relaxed block font-light">
                       Office No. 101-182, Muhammad Abdullah Property,<br />
-                      Deira – Hor Al Anz, Dubai, UAE[cite: 1]
+                      Deira – Hor Al Anz, Dubai, UAE
                     </span>
                   </div>
                 </div>

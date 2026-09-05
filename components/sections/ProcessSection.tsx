@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
 const steps = [
@@ -45,86 +46,102 @@ const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 },
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
   },
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
 export default function ProcessSection() {
   return (
-    <section className="py-24 md:py-32 bg-[#0b0b0a] border-t border-[#cea945]/20 relative overflow-hidden">
-      
-      {/* Subtle background glow */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#21332a]/30 blur-[120px] pointer-events-none rounded-full" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#cea945]/5 blur-[120px] pointer-events-none rounded-full" />
+    <section className="py-24 sm:py-32 md:py-40 bg-[#0b0b0a] border-t border-white/5 relative overflow-hidden select-none">
+      {/* ─── CONTAINER TERMINAL BACKGROUND ─── */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/images/home/pattern.jpg"
+          alt="Container Logistics and Port Sourcing"
+          fill
+          sizes="100vw"
+          quality={90}
+          className="object-cover object-center opacity-30 scale-105"
+        />
 
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-8 relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-          <div className="flex items-center justify-center gap-2.5 mb-3">
-            <span className="w-8 h-[2px] bg-[#cea945]" />
-            <span className="text-[#cea945] text-xs font-bold uppercase tracking-[0.22em]">
+        {/* Vertical fades: Melts the section seamlessly into preceding and subsequent blocks */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a] via-[#0b0b0a]/65 to-[#0b0b0a]" />
+
+        {/* Radial vignette: Keeps the content plane high-contrast */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_25%,_#0b0b0a_85%)]" />
+
+        {/* Ambient warm flare: Accentuates the natural backlight of the photography */}
+        <div className="absolute top-1/4 right-1/4 w-[550px] h-[350px] bg-[#cea945]/[0.05] blur-[150px] rounded-full pointer-events-none" />
+      </div>
+
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* ─── Section Header ─── */}
+        <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 md:mb-24">
+          <div className="flex items-center justify-center gap-3 mb-4 sm:mb-5">
+            <span className="w-8 sm:w-10 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
+            <span className="text-[#cea945] text-[10.5px] sm:text-xs font-bold uppercase tracking-[0.28em] drop-shadow-[0_0_10px_rgba(206,169,69,0.35)]">
               The Procurement Process
             </span>
-            <span className="w-8 h-[2px] bg-[#cea945]" />
+            <span className="w-8 sm:w-10 h-[1px] bg-gradient-to-l from-transparent to-[#cea945]" />
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-[2.6rem] font-serif font-bold text-white tracking-tight leading-tight">
-            From inquiry to delivered container, handled for you.
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] font-serif font-bold text-white tracking-tight leading-[1.12]">
+            From inquiry to delivered container,{" "}
+            <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
+              handled for you.
+            </span>
           </h2>
         </div>
 
-        {/* 6-Step Process Grid */}
-        <motion.div 
+        {/* ─── 6-Step Process Grid ─── */}
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7"
         >
           {steps.map((step) => (
-            <motion.div key={step.idx} variants={cardVariants}>
-              <div className="group relative bg-[#111a15] border border-[#21332a] p-8 md:p-10 rounded-xl transition-all duration-500 hover:bg-[#21332a] hover:border-[#cea945]/50 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] flex flex-col h-full overflow-hidden">
-                
-                {/* Giant Watermark Number */}
-                <div className="absolute -bottom-4 -right-4 text-[130px] font-serif font-bold text-[#21332a]/40 group-hover:text-[#cea945]/10 transition-colors duration-500 pointer-events-none leading-none select-none">
+            <motion.div key={step.idx} variants={cardVariants} className="h-full">
+              <div className="group relative bg-[#0e1511]/85 backdrop-blur-md border border-white/[0.08] p-7 sm:p-9 rounded-2xl transition-all duration-500 hover:border-[#cea945]/50 hover:bg-[#121c17]/90 hover:-translate-y-1.5 hover:shadow-[0_22px_45px_-10px_rgba(0,0,0,0.85)] flex flex-col h-full overflow-hidden">
+                {/* Subtle top gold accent sweep on hover */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#cea945] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+
+                {/* Giant Ambient Watermark Number */}
+                <div className="absolute -bottom-3 -right-2 text-[100px] sm:text-[120px] font-serif font-bold text-white/[0.03] group-hover:text-[#cea945]/[0.07] transition-colors duration-500 pointer-events-none leading-none select-none">
                   {step.idx}
                 </div>
 
-                {/* Top Border Accent (Animates on hover) */}
-                <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#cea945] to-[#e2bd76] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-
-                {/* Step Indicator */}
+                {/* Step Pill & Connector Line */}
                 <div className="flex items-center gap-4 mb-6 relative z-10">
-                  <div className="w-10 h-10 rounded-full bg-[#21332a] border border-[#cea945]/30 flex items-center justify-center text-[#cea945] font-bold text-sm group-hover:bg-[#cea945] group-hover:text-[#0b0b0a] transition-colors duration-300 shadow-sm">
-                    {step.idx.replace("0", "")}
+                  <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-[#cea945]/30 flex items-center justify-center text-[#cea945] font-bold text-sm group-hover:bg-[#cea945] group-hover:text-[#0b0b0a] group-hover:border-[#cea945] transition-all duration-300 shadow-sm">
+                    {step.idx}
                   </div>
-                  <div className="h-px flex-grow bg-[#21332a] group-hover:bg-[#cea945]/30 transition-colors duration-300" />
+                  <div className="h-[1px] flex-grow bg-white/[0.07] group-hover:bg-[#cea945]/30 transition-colors duration-300" />
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#cea945] transition-colors duration-300">
+                {/* Step Narrative */}
+                <div className="relative z-10 flex flex-col flex-grow">
+                  <h3 className="text-[19px] sm:text-[20px] font-serif font-bold text-white mb-2.5 group-hover:text-[#cea945] transition-colors duration-300 leading-snug">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-[#cfc8ba] leading-relaxed group-hover:text-white transition-colors duration-300">
+                  <p className="text-[13.5px] sm:text-[14px] text-[#cfc8ba] leading-[1.7] font-light group-hover:text-[#e7e1d4] transition-colors duration-300">
                     {step.description}
                   </p>
                 </div>
-                
               </div>
             </motion.div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );

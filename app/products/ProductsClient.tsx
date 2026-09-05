@@ -34,67 +34,70 @@ export default function ProductsClient() {
     <div className="bg-[#0b0b0a] text-white pt-24 md:pt-32 pb-10">
       
       {/* ─── CINEMATIC HERO SECTION ─── */}
-<section className="relative overflow-hidden px-[5%] py-36 md:py-52 min-h-[75vh] flex items-center justify-center border-b border-white/5">
-  {/* ─── BACKGROUND IMAGE & VIGNETTE OVERLAYS ─── */}
-  <div className="absolute inset-0 z-0 pointer-events-none select-none">
+<section className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-32 sm:py-44 md:py-52 min-h-[75vh] md:min-h-[85vh] flex items-center justify-center border-b border-white/5 select-none">
+  {/* ─── FLAT-LAY SPICE FRAME BACKGROUND ─── */}
+  <div className="absolute inset-0 z-0 pointer-events-none">
     <Image
-      src="/images/products/hero-bg.webp"
-      alt="Mintrix Trading Global Food Commodities"
+      src="/images/products/hero-section.webp"
+      alt="Mintrix Trading Premium Food Commodities"
       fill
       priority
       sizes="100vw"
       quality={95}
-      className="object-cover object-center scale-[1.03] transition-transform duration-[2.5s] ease-out"
+      className="object-cover object-center"
     />
 
-    {/* Cinematic Radial Vignette: deep edges, spotlight in center */}
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(11,11,10,0.35)_0%,_rgba(11,11,10,0.85)_65%,_#0b0b0a_100%)]" />
+    {/* 1. Global subtle tint to bring down harsh highlights while preserving spice colors */}
+    <div className="absolute inset-0 bg-[#0b0b0a]/35" />
 
-    {/* Top & Bottom seamless gradient melts */}
-    <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a] via-transparent to-[#111a15]" />
+    {/* 2. Soft center shadow: gives the middle stone area contrast for the typography */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(11,11,10,0.7)_0%,_rgba(11,11,10,0.3)_45%,_transparent_75%)]" />
 
-    {/* Subtle central warm illumination */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#cea945]/[0.07] blur-[140px] rounded-full pointer-events-none" />
+    {/* 3. Top & Bottom edge melts: ensures a seamless flow into the navbar and the catalog section */}
+    <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a]/90 via-transparent to-[#0b0b0a]" />
+
+    {/* 4. Subtle central warm gold glow */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#cea945]/[0.06] blur-[120px] rounded-full pointer-events-none" />
   </div>
 
-  {/* ─── CONTENT ─── */}
+  {/* ─── CENTERED CONTENT ─── */}
   <div className="max-w-[1240px] mx-auto relative z-10 text-center w-full">
     <motion.div
       initial="hidden"
       animate="visible"
       variants={staggerContainer}
-      className="max-w-[860px] mx-auto flex flex-col items-center"
+      className="max-w-[780px] mx-auto flex flex-col items-center"
     >
-      {/* Eyebrow with hairline gold rules */}
+      {/* Eyebrow badge with glowing hairline rules */}
       <motion.div
         variants={fadeInUp}
-        className="flex items-center justify-center gap-3.5 mb-7"
+        className="flex items-center justify-center gap-3.5 mb-6 sm:mb-8"
       >
-        <span className="w-10 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
-        <span className="text-[#cea945] text-[11px] md:text-xs font-semibold tracking-[0.3em] uppercase drop-shadow-[0_0_12px_rgba(206,169,69,0.4)]">
+        <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
+        <span className="text-[#cea945] text-[10.5px] sm:text-xs font-bold tracking-[0.3em] uppercase drop-shadow-[0_0_12px_rgba(206,169,69,0.5)]">
           Complete Catalog
         </span>
-        <span className="w-10 h-[1px] bg-gradient-to-l from-transparent to-[#cea945]" />
+        <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-l from-transparent to-[#cea945]" />
       </motion.div>
 
       {/* Main Headline */}
       <motion.h1
         variants={fadeInUp}
-        className="text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-serif font-bold text-white tracking-[-0.02em] leading-[1.06] mb-8 drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]"
+        className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-bold text-white tracking-[-0.02em] leading-[1.08] mb-6 sm:mb-8 drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
       >
         Wholesale foodstuff{" "}
         <span className="block mt-1 sm:mt-2">
           supplier in{" "}
-          <span className="bg-gradient-to-r from-[#edd382] via-[#cea945] to-[#c29633] bg-clip-text text-transparent italic drop-shadow-none">
+          <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#c29633] bg-clip-text text-transparent italic">
             Dubai.
           </span>
         </span>
       </motion.h1>
 
-      {/* Intro Subtitle */}
+      {/* Editorial Subtitle */}
       <motion.p
         variants={fadeInUp}
-        className="text-[#d8d2c5]/85 text-base sm:text-lg md:text-[18.5px] leading-[1.75] max-w-[620px] font-light tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
+        className="text-[#e7e1d4]/90 text-sm sm:text-base md:text-[18px] leading-[1.75] max-w-[560px] font-light tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
       >
         Sourcing premium agricultural commodities across eight core divisions. Verified at origin and delivered worldwide for distributors, restaurants, and importers.
       </motion.p>
