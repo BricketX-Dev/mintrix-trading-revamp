@@ -34,129 +34,189 @@ export default function ProductsClient() {
     <div className="bg-[#0b0b0a] text-white pt-24 md:pt-32 pb-10">
       
       {/* ─── CINEMATIC HERO SECTION ─── */}
-      <section className="relative overflow-hidden px-[5%] py-32 md:py-48 border-b border-[#cea945]/15 flex items-center justify-center">
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <Image
-            src="/images/products/hero-bg.webp" 
-            alt="Mintrix Trading Global Sourcing"
-            fill
-            sizes="100vw"
-            quality={90}
-            className="object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a]/90 via-[#0b0b0a]/70 to-[#111a15]" />
-          <div className="absolute inset-0 bg-[#0b0b0a]/30 backdrop-blur-[2px]" />
-        </div>
-        
-        <div className="max-w-[1240px] mx-auto relative z-10 text-center w-full">
-          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-[800px] mx-auto">
-            <motion.div variants={fadeInUp} className="flex items-center justify-center gap-3 mb-6">
-              <span className="w-8 h-[1px] bg-[#cea945]/80 shadow-[0_0_8px_rgba(206,169,69,0.5)]" />
-              <span className="text-[#cea945] text-[11px] md:text-xs font-bold uppercase tracking-[0.25em] drop-shadow-md">
-                Complete Catalog
+<section className="relative overflow-hidden px-[5%] py-36 md:py-52 min-h-[75vh] flex items-center justify-center border-b border-white/5">
+  {/* ─── BACKGROUND IMAGE & VIGNETTE OVERLAYS ─── */}
+  <div className="absolute inset-0 z-0 pointer-events-none select-none">
+    <Image
+      src="/images/products/hero-bg.webp"
+      alt="Mintrix Trading Global Food Commodities"
+      fill
+      priority
+      sizes="100vw"
+      quality={95}
+      className="object-cover object-center scale-[1.03] transition-transform duration-[2.5s] ease-out"
+    />
+
+    {/* Cinematic Radial Vignette: deep edges, spotlight in center */}
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(11,11,10,0.35)_0%,_rgba(11,11,10,0.85)_65%,_#0b0b0a_100%)]" />
+
+    {/* Top & Bottom seamless gradient melts */}
+    <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a] via-transparent to-[#111a15]" />
+
+    {/* Subtle central warm illumination */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#cea945]/[0.07] blur-[140px] rounded-full pointer-events-none" />
+  </div>
+
+  {/* ─── CONTENT ─── */}
+  <div className="max-w-[1240px] mx-auto relative z-10 text-center w-full">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={staggerContainer}
+      className="max-w-[860px] mx-auto flex flex-col items-center"
+    >
+      {/* Eyebrow with hairline gold rules */}
+      <motion.div
+        variants={fadeInUp}
+        className="flex items-center justify-center gap-3.5 mb-7"
+      >
+        <span className="w-10 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
+        <span className="text-[#cea945] text-[11px] md:text-xs font-semibold tracking-[0.3em] uppercase drop-shadow-[0_0_12px_rgba(206,169,69,0.4)]">
+          Complete Catalog
+        </span>
+        <span className="w-10 h-[1px] bg-gradient-to-l from-transparent to-[#cea945]" />
+      </motion.div>
+
+      {/* Main Headline */}
+      <motion.h1
+        variants={fadeInUp}
+        className="text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-serif font-bold text-white tracking-[-0.02em] leading-[1.06] mb-8 drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]"
+      >
+        Wholesale foodstuff{" "}
+        <span className="block mt-1 sm:mt-2">
+          supplier in{" "}
+          <span className="bg-gradient-to-r from-[#edd382] via-[#cea945] to-[#c29633] bg-clip-text text-transparent italic drop-shadow-none">
+            Dubai.
+          </span>
+        </span>
+      </motion.h1>
+
+      {/* Intro Subtitle */}
+      <motion.p
+        variants={fadeInUp}
+        className="text-[#d8d2c5]/85 text-base sm:text-lg md:text-[18.5px] leading-[1.75] max-w-[620px] font-light tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
+      >
+        Sourcing premium agricultural commodities across eight core divisions. Verified at origin and delivered worldwide for distributors, restaurants, and importers.
+      </motion.p>
+    </motion.div>
+  </div>
+</section>
+
+{/* ─── FULL-WIDTH CATALOG GRID ─── */}
+<section className="bg-[#0b0b0a] relative py-20 md:py-28">
+  {/* Ambient background depth */}
+  <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-[#21332a]/10 blur-[140px] pointer-events-none rounded-full" />
+  <div className="absolute bottom-10 right-0 w-[600px] h-[600px] bg-[#cea945]/[0.03] blur-[150px] pointer-events-none rounded-full" />
+
+  <div className="max-w-[1400px] mx-auto px-[5%] space-y-32 relative z-10">
+    {catalogData.map((category, catIdx) => {
+      const categorySlug = slugify(category.title);
+
+      return (
+        <motion.div
+          key={category.id}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={staggerContainer}
+          className="relative"
+        >
+          {/* Category Header */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex items-end justify-between pb-5 mb-10 border-b border-white/[0.08]"
+          >
+            <div className="flex items-baseline gap-4 md:gap-6">
+              <span className="font-serif text-3xl md:text-4xl font-light text-[#cea945]/60 tracking-wider">
+                {category.id}
               </span>
-              <span className="w-8 h-[1px] bg-[#cea945]/80 shadow-[0_0_8px_rgba(206,169,69,0.5)]" />
-            </motion.div>
-            
-            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-[4.2rem] font-bold font-serif leading-[1.05] tracking-tight mb-8 drop-shadow-xl text-white">
-              Wholesale foodstuff supplier in <span className="text-[#cea945]">Dubai.</span>
-            </motion.h1>
-            
-            <motion.p variants={fadeInUp} className="text-[#e7e1d4] text-base md:text-[18px] leading-[1.8] max-w-[640px] mx-auto font-medium drop-shadow-md">
-              Sourcing premium agricultural commodities across eight core divisions. Verified at origin and delivered worldwide for distributors, restaurants, and importers.
-            </motion.p>
+              <div>
+                <h2 className="text-2xl md:text-[34px] font-bold text-white font-serif tracking-tight leading-none">
+                  {category.title}
+                </h2>
+                {category.subtitle && (
+                  <p className="hidden sm:block text-[12px] text-[#a89f8b] font-medium tracking-wider uppercase mt-2">
+                    {category.subtitle}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2.5 pb-1">
+              <span className="text-[11px] text-[#a89f8b] font-semibold tracking-[0.25em] uppercase">
+                {category.items.length} Products
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#cea945] inline-block" />
+            </div>
           </motion.div>
-        </div>
-      </section>
 
-      {/* ─── FULL-WIDTH CATALOG GRID ─── */}
-      <section className="bg-[#111a15] relative">
-        <div className="max-w-[1400px] mx-auto px-[5%] py-24 space-y-24">
-          {catalogData.map((category, catIdx) => {
-            const categorySlug = slugify(category.title);
-            
-            return (
-              <motion.div 
-                key={category.id} 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={staggerContainer}
-                className="relative"
-              >
-                
-                {/* Category Header */}
-                <motion.div variants={fadeInUp} className="flex items-baseline justify-between pb-6 mb-8 border-b border-white/10">
-                  <div className="flex items-baseline gap-4">
-                    <span className="text-[#cea945] font-serif text-2xl md:text-3xl font-bold">
-                      {category.id}
-                    </span>
-                    <h2 className="text-2xl md:text-[32px] font-bold text-white font-serif tracking-tight">
-                      {category.title}
-                    </h2>
-                  </div>
-                  <div className="flex items-center gap-2 text-[10px] md:text-[11px] text-[#a89f8b] font-bold uppercase tracking-[0.2em]">
-                    <span>{category.items.length} PRODUCTS</span>
-                    <span className="text-[#cea945] text-lg leading-none mb-1">•</span>
-                  </div>
+          {/* Product Grid: 4 balanced columns */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {category.items.map((item, i) => {
+              const productSlug = slugify(item.name);
+              const productUrl = `/products/${categorySlug}/${productSlug}`;
+
+              return (
+                <motion.div key={i} variants={fadeInUp}>
+                  <Link
+                    href={productUrl}
+                    className="group relative flex flex-col aspect-[4/5] rounded-2xl overflow-hidden bg-[#141a17] border border-white/[0.07] transition-all duration-500 hover:border-[#cea945]/60 hover:shadow-[0_20px_45px_-12px_rgba(0,0,0,0.85)] hover:-translate-y-1 block"
+                  >
+                    {/* Background Product Image */}
+                    <div className="absolute inset-0 w-full h-full bg-[#0e1210]">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        quality={85}
+                        className="object-cover object-center transition-transform duration-[1400ms] ease-out group-hover:scale-108 opacity-90 group-hover:opacity-100"
+                      />
+                    </div>
+
+                    {/* Multi-stage Contrast Gradient Mask */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0a] via-[#0b0b0a]/50 to-transparent opacity-95 transition-opacity duration-500 group-hover:opacity-90" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a]/40 via-transparent to-transparent opacity-60" />
+
+                    {/* Category/Tag Pill */}
+                    {(item.subcategory || item.latin) && (
+                      <div className="absolute top-4 left-4 z-10">
+                        <span className="text-[10px] tracking-[0.18em] uppercase font-semibold text-[#cfc8ba] bg-[#0b0b0a]/75 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10">
+                          {item.subcategory || item.latin}
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Bottom Card Content */}
+                    <div className="relative z-10 p-5 md:p-6 mt-auto flex flex-col justify-end text-left">
+                      <h4 className="text-[17px] md:text-[20px] font-bold text-white font-serif leading-snug tracking-tight group-hover:text-[#cea945] transition-colors duration-300 drop-shadow-md">
+                        {item.name}
+                      </h4>
+
+                      {/* Interactive View Specs drawer */}
+                      <div className="flex items-center justify-between pt-3 mt-3 border-t border-white/[0.08] text-[#a89f8b]">
+                        <span className="text-[11px] font-medium tracking-wider uppercase text-[#a89f8b] group-hover:text-[#cfc8ba] transition-colors">
+                          Export Grade
+                        </span>
+                        <span className="text-xs font-semibold text-[#cea945] flex items-center gap-1.5 transition-transform duration-300 group-hover:translate-x-1">
+                          Specs
+                          <span className="text-sm font-bold leading-none">&rarr;</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Subtle top edge gold highlight on hover */}
+                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#cea945] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </Link>
                 </motion.div>
-
-                {/* Product Grid (Cinematic Cards linked to their dynamic routes) */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
-                  {category.items.map((item, i) => {
-                    const productSlug = slugify(item.name);
-                    const productUrl = `/products/${categorySlug}/${productSlug}`;
-
-                    return (
-                      <motion.div key={i} variants={fadeInUp}>
-                        <Link href={productUrl} className="group relative flex flex-col h-[200px] md:h-[240px] bg-[#16221c] border border-white/5 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#cea945]/30 hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.6)]">
-                          
-                          {/* Image Container */}
-                          <div className="absolute inset-0 w-full h-full bg-[#0b0b0a]">
-                            <Image
-                              src={item.image}
-                              alt={item.name}
-                              fill
-                              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                              quality={80}
-                              className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                            />
-                          </div>
-
-                          {/* Heavy bottom gradient for text legibility */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0a]/95 via-[#0b0b0a]/30 to-transparent opacity-95 transition-opacity duration-500" />
-                          
-                          {/* Content Area */}
-                          <div className="relative z-10 p-5 flex flex-col h-full justify-end text-left">
-                            <h4 className="text-[15px] md:text-[17px] font-bold text-white font-serif group-hover:text-[#cea945] transition-colors duration-300 drop-shadow-md leading-tight">
-                              {item.name}
-                            </h4>
-                            
-                            {(item.latin || item.subcategory) && (
-                              <p className="mt-1 text-[11px] text-[#cfc8ba] italic leading-snug line-clamp-1 drop-shadow-sm font-light opacity-80">
-                                {item.latin || item.subcategory}
-                              </p>
-                            )}
-
-                            {/* View Specifications prompt that appears on hover */}
-                            <div className="mt-3 overflow-hidden h-0 group-hover:h-auto opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                              <span className="text-[#cea945] text-[10px] uppercase tracking-widest font-bold flex items-center gap-1">
-                                View Specs <span className="text-sm leading-none">&rarr;</span>
-                              </span>
-                            </div>
-                          </div>
-
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-
-              </motion.div>
-            );
-          })}
-        </div>
-      </section>
+              );
+            })}
+          </div>
+        </motion.div>
+      );
+    })}
+  </div>
+</section>
 
       {/* ─── SOURCING ADVANTAGE ─── */}
       <section className="px-[5%] py-24 bg-[#0b0b0a] border-y border-white/5 relative">
