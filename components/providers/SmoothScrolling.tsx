@@ -1,23 +1,31 @@
 "use client";
 
-import { ReactLenis } from "@studio-freight/react-lenis";
+import Lenis from "lenis";
+import { useEffect } from "react";
 
 export default function SmoothScrolling({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <ReactLenis
-      root
-      options={{
-        lerp: 0.07,
-        duration: 1.2,
-        smoothWheel: true,
-      }}
-    >
-      {/* Bypass the React 18 vs React 19 type mismatch */}
-      {children as any}
-    </ReactLenis>
-  );
+  useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.07,
+      duration: 1.2,
+      smoothWheel: true,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
+  return <>{children}</>;
 }

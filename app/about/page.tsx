@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import AboutClient from "./AboutClient.tsx";
+import AboutClient from "./AboutClient";
 
 export const metadata: Metadata = {
   title: "About Us | Mintrix Trading Dubai",
