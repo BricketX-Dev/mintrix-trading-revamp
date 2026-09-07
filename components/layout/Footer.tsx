@@ -20,13 +20,17 @@ export default function Footer() {
           {/* Column 1: Brand Authority & Legal Identity (Span 5 on Desktop) */}
           <div className="lg:col-span-5 pr-0 lg:pr-10">
             <Link href="/" className="inline-block mb-4 sm:mb-5 group">
-              <Image
-                src="/images/logo/04-01.png"
-                alt="Mintrix Trading Logo"
-                width={150}
-                height={45}
-                className="object-contain transition-transform duration-500 group-hover:scale-105"
-              />
+              <div className="w-[150px] sm:w-[170px]">
+                <Image
+                  src="/images/logo/04-01.png"
+                  alt="Mintrix Trading Logo"
+                  width={400}
+                  height={120}
+                  sizes="(max-width: 640px) 150px, 170px"
+                  style={{ width: "100%", height: "auto" }}
+                  className="object-contain transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
             </Link>
 
             <p className="text-[13px] sm:text-[13.5px] leading-[1.75] text-[#a89f8b] mb-5 sm:mb-6 font-light max-w-md">

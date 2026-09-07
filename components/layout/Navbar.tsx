@@ -62,7 +62,8 @@ export default function Navbar() {
                 alt="Mintrix Trading Logo"
                 width={400}
                 height={120}
-                className={`h-auto object-contain transition-all duration-500 group-hover:scale-105 ${
+                style={{ height: "auto" }}
+                className={`object-contain transition-all duration-500 group-hover:scale-105 ${
                   scrolled ? "w-[120px] md:w-[140px]" : "w-[150px] md:w-[180px]"
                 }`}
                 priority
@@ -97,7 +98,7 @@ export default function Navbar() {
 
             <div className="w-[1px] h-6 bg-white/10" />
 
-            {/* High-End Bordered CTA (Updated to route to the new Contact page) */}
+            {/* High-End Bordered CTA */}
             <Link
               href="/contact"
               className={`group relative px-7 py-3 text-[11px] font-bold text-white tracking-[0.2em] uppercase border border-white/20 hover:border-[#cea945] overflow-hidden transition-all duration-300 ${

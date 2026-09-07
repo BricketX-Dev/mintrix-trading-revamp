@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 
+// ─── STATIC DATA & ANIMATION VARIANTS (Hoisted outside render cycle) ───
+
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
@@ -15,7 +17,41 @@ const fadeInUp: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
 
-// Reusable SVG Icons
+const stats = [
+  { b: "2016", s: "Trading Since" },
+  { b: "$50M+", s: "Trade Executed" },
+  { b: "14", s: "Countries Served" },
+  { b: "50+", s: "Countries Sourced" },
+  { b: "18+", s: "Commodities" },
+  { b: "24h", s: "Quote Response" },
+];
+
+const countries = [
+  { flag: "/images/Countries/united-states_197484.png", name: "USA" },
+  { flag: "/images/Countries/china_4628706.png", name: "China" },
+  { flag: "/images/Countries/thailand_4855805.png", name: "Thailand" },
+  { flag: "/images/Countries/world_16021893.png", name: "Argentina" },
+  { flag: "/images/Countries/brazil_9906449.png", name: "Brazil" },
+  { flag: "/images/Countries/pak.png", name: "Pakistan" },
+  { flag: "/images/Countries/kenya.png", name: "Kenya" },
+  { flag: "/images/Countries/south-africa_8363054.png", name: "South Africa" },
+  { flag: "/images/Countries/sri-lanka_5315348.png", name: "Sri Lanka" },
+  { flag: "/images/Countries/colombia-flag_11654450.png", name: "Colombia" },
+  { flag: "/images/Countries/india.png", name: "India" },
+  { flag: "/images/Countries/circle_12364093.png", name: "Iraq" },
+  { flag: "/images/Countries/world_16022620.png", name: "Saudi Arabia" },
+  { flag: "/images/Countries/chile_7826434.png", name: "Chile" },
+];
+
+const faqs = [
+  { q: "What is Mintrix Trading?", a: "Mintrix Trading is a UAE-registered global food trading and procurement company based in Dubai. Established in 2016, it sources premium agricultural commodities and food products from verified suppliers worldwide and delivers to buyers across the UAE and beyond, handling quality, documentation and logistics end-to-end." },
+  { q: "Where is Mintrix Trading based?", a: "Mintrix Trading is based in Dubai, UAE, at Office No. 101-182, Muhammad Abdullah Property, Deira, Hor Al Anz. From this Dubai base, the company sources food commodities from more than 50 countries and delivers to buyers worldwide." },
+  { q: "Is Mintrix Trading a legitimate food trading company?", a: "Yes. Mintrix Trading is a UAE-registered company that has traded since 2016, executing more than $50M in food and agricultural commodity trade and supplying buyers in 14 countries, with verified suppliers and full export documentation on every shipment." },
+  { q: "How long has Mintrix Trading been in business?", a: "Mintrix Trading has been trading since 2016, almost a decade of sourcing and delivering bulk food and agricultural commodities. In that time it has executed more than $50M in trade and now supplies buyers in 14 countries." },
+];
+
+// ─── REUSABLE ICONS ───
+
 const CheckIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5 text-[#cea945] flex-none mt-0.5">
     <path strokeLinecap="round" strokeLinejoin="round" d="m9 12 2 2 4-4" />
@@ -29,41 +65,10 @@ const ArrowIcon = () => (
   </svg>
 );
 
+// ─── MAIN COMPONENT ───
+
 export default function AboutClient() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
-
-  const stats = [
-    { b: "2016", s: "Trading Since" },
-    { b: "$50M+", s: "Trade Executed" },
-    { b: "14", s: "Countries Served" },
-    { b: "50+", s: "Countries Sourced" },
-    { b: "18+", s: "Commodities" },
-    { b: "24h", s: "Quote Response" },
-  ];
-
-  const countries = [
-    { flag: "/images/Countries/united-states_197484.png", name: "USA" },
-    { flag: "/images/Countries/china_4628706.png", name: "China" },
-    { flag: "/images/Countries/thailand_4855805.png", name: "Thailand" },
-    { flag: "/images/Countries/world_16021893.png", name: "Argentina" },
-    { flag: "/images/Countries/brazil_9906449.png", name: "Brazil" },
-    { flag: "/images/Countries/pak.png", name: "Pakistan" },
-    { flag: "/images/Countries/kenya.png", name: "Kenya" },
-    { flag: "/images/Countries/south-africa_8363054.png", name: "South Africa" },
-    { flag: "/images/Countries/sri-lanka_5315348.png", name: "Sri Lanka" },
-    { flag: "/images/Countries/colombia-flag_11654450.png", name: "Colombia" },
-    { flag: "/images/Countries/india.png", name: "India" },
-    { flag: "/images/Countries/circle_12364093.png", name: "Iraq" },
-    { flag: "/images/Countries/world_16022620.png", name: "Saudi Arabia" },
-    { flag: "/images/Countries/chile_7826434.png", name: "Chile" },
-  ];
-
-  const faqs = [
-    { q: "What is Mintrix Trading?", a: "Mintrix Trading is a UAE-registered global food trading and procurement company based in Dubai. Established in 2016, it sources premium agricultural commodities and food products from verified suppliers worldwide and delivers to buyers across the UAE and beyond, handling quality, documentation and logistics end-to-end." },
-    { q: "Where is Mintrix Trading based?", a: "Mintrix Trading is based in Dubai, UAE, at Office No. 101-182, Muhammad Abdullah Property, Deira, Hor Al Anz. From this Dubai base, the company sources food commodities from more than 50 countries and delivers to buyers worldwide." },
-    { q: "Is Mintrix Trading a legitimate food trading company?", a: "Yes. Mintrix Trading is a UAE-registered company that has traded since 2016, executing more than $50M in food and agricultural commodity trade and supplying buyers in 14 countries, with verified suppliers and full export documentation on every shipment." },
-    { q: "How long has Mintrix Trading been in business?", a: "Mintrix Trading has been trading since 2016, almost a decade of sourcing and delivering bulk food and agricultural commodities. In that time it has executed more than $50M in trade and now supplies buyers in 14 countries." },
-  ];
 
   return (
     <div className="bg-[#0b0b0a] text-white overflow-hidden min-h-screen">
@@ -77,7 +82,7 @@ export default function AboutClient() {
             fill
             priority
             sizes="100vw"
-            quality={95}
+            quality={85} // Optimized for LCP without visual degradation
             className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-[#0b0b0a]/40" />
@@ -150,7 +155,7 @@ export default function AboutClient() {
             alt="Mintrix Global Sourcing Network"
             fill
             sizes="100vw"
-            quality={95}
+            quality={85}
             className="object-cover object-center opacity-75 scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a] via-transparent to-[#0b0b0a]" />
@@ -258,32 +263,24 @@ export default function AboutClient() {
         </div>
       </section>
 
-{/* ─── SECTION 1: MISSION & VISION ─── */}
+      {/* ─── SECTION 1: MISSION & VISION ─── */}
       <section className="py-28 sm:py-36 md:py-44 px-[5%] bg-[#0b0b0a] relative overflow-hidden select-none border-b border-white/5">
-        {/* Background Visual Layer */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
             src="/images/about/vision-bg.webp"
             alt="Mintrix Global Trade Horizon"
             fill
             sizes="100vw"
-            quality={90}
+            quality={85}
             className="object-cover object-center opacity-35 scale-105"
           />
-
-          {/* Top & Bottom seamless gradient melts */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a] via-[#0b0b0a]/60 to-[#0b0b0a]" />
-
-          {/* Central radial focus mask */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_20%,_#0b0b0a_85%)]" />
-
-          {/* Ambient lighting accents */}
           <div className="absolute top-1/3 left-1/4 w-[500px] h-[300px] bg-[#cea945]/[0.06] blur-[140px] rounded-full pointer-events-none" />
           <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[300px] bg-[#21332a]/20 blur-[140px] rounded-full pointer-events-none" />
         </div>
         
         <div className="max-w-[1240px] mx-auto relative z-10">
-          {/* Header */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -310,7 +307,6 @@ export default function AboutClient() {
             </motion.h2>
           </motion.div>
 
-          {/* Cards Grid */}
           <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
             {[
               {
@@ -345,11 +341,9 @@ export default function AboutClient() {
                 variants={fadeInUp}
                 className="bg-[#0e1511]/80 backdrop-blur-lg border border-white/[0.08] rounded-2xl p-8 sm:p-10 lg:p-12 flex flex-col justify-between transition-all duration-500 hover:border-[#cea945]/50 hover:bg-[#121c17]/90 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(0,0,0,0.85)] group relative overflow-hidden"
               >
-                {/* Gold Top Accent Line */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#cea945] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
 
                 <div>
-                  {/* Top Bar inside Card */}
                   <div className="flex items-center justify-between pb-6 mb-8 border-b border-white/[0.07]">
                     <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.25em] text-[#a89f8b] group-hover:text-[#cea945] transition-colors duration-300">
                       {card.tag}
@@ -359,18 +353,15 @@ export default function AboutClient() {
                     </div>
                   </div>
 
-                  {/* Title */}
                   <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4 group-hover:text-[#cea945] transition-colors duration-300">
                     {card.title}
                   </h3>
 
-                  {/* Description */}
                   <p className="text-[#cfc8ba] leading-[1.8] text-[15px] sm:text-[16px] font-light">
                     {card.desc}
                   </p>
                 </div>
 
-                {/* Bottom Trust Signal */}
                 <div className="pt-8 mt-8 border-t border-white/[0.05] flex items-center gap-2 text-[#a89f8b] text-[11px] uppercase tracking-wider font-semibold">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#cea945]" />
                   <span>Institutional Standard</span>
@@ -381,26 +372,19 @@ export default function AboutClient() {
         </div>
       </section>
 
-{/* ─── SECTION 2: HOW WE WORK (WITH VISIBLE BG IMAGE) ─── */}
+      {/* ─── SECTION 2: HOW WE WORK ─── */}
       <section className="py-24 sm:py-32 md:py-40 px-[5%] bg-[#0b0b0a] relative overflow-hidden select-none border-b border-white/5">
-        {/* ─── BACKGROUND IMAGE & LIGHTING LAYER ─── */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
             src="/images/about/wheat-field-bg.webp"
             alt="How We Work - Mintrix Trading Principles"
             fill
             sizes="100vw"
-            quality={95}
+            quality={85}
             className="object-cover object-center opacity-65 scale-105"
           />
-
-          {/* Top & Bottom seamless fades to blend with adjacent sections */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a] via-[#0b0b0a]/40 to-[#0b0b0a]" />
-
-          {/* Soft global darkening to maintain typography contrast */}
           <div className="absolute inset-0 bg-[#0b0b0a]/30" />
-
-          {/* Subtle gold and emerald ambient glows */}
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#cea945]/[0.08] blur-[140px] rounded-full" />
           <div className="absolute bottom-1/4 right-10 w-[500px] h-[400px] bg-[#21332a]/30 blur-[150px] rounded-full" />
         </div>
@@ -522,9 +506,8 @@ export default function AboutClient() {
         </div>
       </section>
 
-{/* ─── FINAL CTA ─── */}
+      {/* ─── FINAL CTA ─── */}
       <section className="py-24 sm:py-32 px-[5%] bg-[#0b0b0a] relative overflow-hidden select-none">
-        {/* Soft background ambient radial illumination */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#cea945]/[0.04] blur-[150px] pointer-events-none rounded-full" />
 
         <div className="max-w-[1240px] mx-auto relative z-10">
@@ -535,28 +518,21 @@ export default function AboutClient() {
             variants={fadeInUp}
             className="group relative rounded-3xl border border-white/[0.1] bg-[#0c130f] p-8 sm:p-12 md:p-16 lg:p-20 overflow-hidden shadow-[0_30px_70px_-15px_rgba(0,0,0,0.9)]"
           >
-            {/* ─── INTEGRATED MARITIME / PORT BACKGROUND ─── */}
             <div className="absolute inset-0 z-0 pointer-events-none">
               <Image
                 src="/images/about/cta-bg.webp"
                 alt="Global Food Commodity Maritime Port"
                 fill
                 sizes="(max-width: 1240px) 100vw, 1240px"
-                quality={90}
+                quality={85}
                 className="object-cover object-right opacity-40 transition-transform duration-1000 ease-out group-hover:scale-105"
               />
-
-              {/* Horizontal fade: solid background on left for text legibility */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#0c130f] via-[#0c130f]/90 to-transparent" />
-
-              {/* Vertical soft fades */}
               <div className="absolute inset-0 bg-gradient-to-b from-[#0c130f]/60 via-transparent to-[#0c130f]/80" />
             </div>
 
-            {/* Top gold ambient hairline accent */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#cea945]/70 to-transparent" />
 
-            {/* ─── CONTENT GRID ─── */}
             <div className="relative z-10 grid lg:grid-cols-[1.2fr_auto] gap-10 lg:gap-16 items-center">
               <div>
                 <div className="flex items-center gap-3 mb-5">
@@ -578,7 +554,6 @@ export default function AboutClient() {
                 </p>
               </div>
 
-              {/* Action Buttons & Fast Credential Pills */}
               <div className="flex flex-col gap-4 min-w-[240px] sm:min-w-[280px]">
                 <Link
                   href="/contact"
@@ -595,7 +570,6 @@ export default function AboutClient() {
                   <span>Explore Products</span>
                 </Link>
 
-                {/* Sub-CTA Trust Indicator */}
                 <div className="pt-2 flex items-center justify-center gap-2 text-[10.5px] uppercase tracking-wider text-[#a89f8b] font-medium">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#cea945]" />
                   <span>24h Commercial Response Guaranteed</span>

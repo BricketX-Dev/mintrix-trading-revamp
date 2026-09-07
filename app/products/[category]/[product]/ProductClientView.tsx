@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, Variants } from "framer-motion";
 import { ProductItem } from "@/data/products";
 
@@ -22,6 +24,34 @@ const staggerContainer: Variants = {
 };
 
 export default function ProductClientView({ product, categoryTitle, categorySlug }: ProductClientViewProps) {
+  const pathname = usePathname();
+
+  // ─── BULLETPROOF SCROLL RESTORATION ───
+  useEffect(() => {
+    // 1. Tell the browser to stop trying to restore scroll positions
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    // 2. Force scroll immediately
+    window.scrollTo(0, 0);
+
+    // 3. Failsafe 1: Wait for DOM paint (Framer Motion layout)
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
+
+    // 4. Failsafe 2: Catch delayed image height calculations
+    const timeout = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, [pathname]); // Re-run whenever the route path changes
+
+  // Pack the category and product into the URL so the Contact page can read them
+  const contactUrl = `/contact?category=${encodeURIComponent(categoryTitle)}&product=${encodeURIComponent(product.name)}`;
+
   return (
     <div className="bg-[#0b0b0a] text-white pt-32 pb-24 min-h-screen relative overflow-hidden">
       
@@ -83,7 +113,7 @@ export default function ProductClientView({ product, categoryTitle, categorySlug
 
             <motion.div variants={fadeInUp}>
               <Link
-                href="/#quote"
+                href={contactUrl}
                 className="inline-flex items-center justify-center w-full sm:w-auto bg-[#cea945] text-[#0b0b0a] font-bold text-xs uppercase tracking-[0.2em] px-10 py-4 rounded-[2px] transition-all duration-300 hover:bg-white shadow-[0_4px_20px_rgba(206,169,69,0.25)]"
               >
                 Request Quotation
@@ -99,7 +129,7 @@ export default function ProductClientView({ product, categoryTitle, categorySlug
                 alt={`${product.name} Wholesale`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 60vw"
-                quality={95}
+                quality={85}
                 priority
                 className="object-cover transition-transform duration-[2000ms] hover:scale-105"
               />
