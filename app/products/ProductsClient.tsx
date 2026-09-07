@@ -34,197 +34,189 @@ export default function ProductsClient() {
     <div className="bg-[#0b0b0a] text-white pt-24 md:pt-32 pb-10">
       
       {/* ─── CINEMATIC HERO SECTION ─── */}
-<section className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-32 sm:py-44 md:py-52 min-h-[75vh] md:min-h-[85vh] flex items-center justify-center border-b border-white/5 select-none">
-  {/* ─── FLAT-LAY SPICE FRAME BACKGROUND ─── */}
-  <div className="absolute inset-0 z-0 pointer-events-none">
-    <Image
-      src="/images/products/hero-section.webp"
-      alt="Mintrix Trading Premium Food Commodities"
-      fill
-      priority
-      sizes="100vw"
-      quality={95}
-      className="object-cover object-center"
-    />
+      <section className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-32 sm:py-44 md:py-52 min-h-[75vh] md:min-h-[85vh] flex items-center justify-center border-b border-white/5 select-none">
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/images/products/hero-section.webp"
+            alt="Mintrix Trading Premium Food Commodities"
+            fill
+            priority
+            sizes="100vw"
+            quality={95}
+            className="object-cover object-center"
+          />
 
-    {/* 1. Global subtle tint to bring down harsh highlights while preserving spice colors */}
-    <div className="absolute inset-0 bg-[#0b0b0a]/35" />
+          <div className="absolute inset-0 bg-[#0b0b0a]/35" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(11,11,10,0.7)_0%,_rgba(11,11,10,0.3)_45%,_transparent_75%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a]/90 via-transparent to-[#0b0b0a]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#cea945]/[0.06] blur-[120px] rounded-full pointer-events-none" />
+        </div>
 
-    {/* 2. Soft center shadow: gives the middle stone area contrast for the typography */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(11,11,10,0.7)_0%,_rgba(11,11,10,0.3)_45%,_transparent_75%)]" />
-
-    {/* 3. Top & Bottom edge melts: ensures a seamless flow into the navbar and the catalog section */}
-    <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a]/90 via-transparent to-[#0b0b0a]" />
-
-    {/* 4. Subtle central warm gold glow */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#cea945]/[0.06] blur-[120px] rounded-full pointer-events-none" />
-  </div>
-
-  {/* ─── CENTERED CONTENT ─── */}
-  <div className="max-w-[1240px] mx-auto relative z-10 text-center w-full">
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={staggerContainer}
-      className="max-w-[780px] mx-auto flex flex-col items-center"
-    >
-      {/* Eyebrow badge with glowing hairline rules */}
-      <motion.div
-        variants={fadeInUp}
-        className="flex items-center justify-center gap-3.5 mb-6 sm:mb-8"
-      >
-        <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
-        <span className="text-[#cea945] text-[10.5px] sm:text-xs font-bold tracking-[0.3em] uppercase drop-shadow-[0_0_12px_rgba(206,169,69,0.5)]">
-          Complete Catalog
-        </span>
-        <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-l from-transparent to-[#cea945]" />
-      </motion.div>
-
-      {/* Main Headline */}
-      <motion.h1
-        variants={fadeInUp}
-        className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-bold text-white tracking-[-0.02em] leading-[1.08] mb-6 sm:mb-8 drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
-      >
-        Wholesale foodstuff{" "}
-        <span className="block mt-1 sm:mt-2">
-          supplier in{" "}
-          <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#c29633] bg-clip-text text-transparent italic">
-            Dubai.
-          </span>
-        </span>
-      </motion.h1>
-
-      {/* Editorial Subtitle */}
-      <motion.p
-        variants={fadeInUp}
-        className="text-[#e7e1d4]/90 text-sm sm:text-base md:text-[18px] leading-[1.75] max-w-[560px] font-light tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
-      >
-        Sourcing premium agricultural commodities across eight core divisions. Verified at origin and delivered worldwide for distributors, restaurants, and importers.
-      </motion.p>
-    </motion.div>
-  </div>
-</section>
-
-{/* ─── FULL-WIDTH CATALOG GRID ─── */}
-<section className="bg-[#0b0b0a] relative py-20 md:py-28">
-  {/* Ambient background depth */}
-  <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-[#21332a]/10 blur-[140px] pointer-events-none rounded-full" />
-  <div className="absolute bottom-10 right-0 w-[600px] h-[600px] bg-[#cea945]/[0.03] blur-[150px] pointer-events-none rounded-full" />
-
-  <div className="max-w-[1400px] mx-auto px-[5%] space-y-32 relative z-10">
-    {catalogData.map((category, catIdx) => {
-      const categorySlug = slugify(category.title);
-
-      return (
-        <motion.div
-          key={category.id}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={staggerContainer}
-          className="relative"
-        >
-          {/* Category Header */}
+        <div className="max-w-[1240px] mx-auto relative z-10 text-center w-full">
           <motion.div
-            variants={fadeInUp}
-            className="flex items-end justify-between pb-5 mb-10 border-b border-white/[0.08]"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-[780px] mx-auto flex flex-col items-center"
           >
-            <div className="flex items-baseline gap-4 md:gap-6">
-              <span className="font-serif text-3xl md:text-4xl font-light text-[#cea945]/60 tracking-wider">
-                {category.id}
+            <motion.div
+              variants={fadeInUp}
+              className="flex items-center justify-center gap-3.5 mb-6 sm:mb-8"
+            >
+              <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
+              <span className="text-[#cea945] text-[10.5px] sm:text-xs font-bold tracking-[0.3em] uppercase drop-shadow-[0_0_12px_rgba(206,169,69,0.5)]">
+                Complete Catalog
               </span>
-              <div>
-                <h2 className="text-2xl md:text-[34px] font-bold text-white font-serif tracking-tight leading-none">
-                  {category.title}
-                </h2>
-                {category.subtitle && (
-                  <p className="hidden sm:block text-[12px] text-[#a89f8b] font-medium tracking-wider uppercase mt-2">
-                    {category.subtitle}
-                  </p>
-                )}
-              </div>
-            </div>
+              <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-l from-transparent to-[#cea945]" />
+            </motion.div>
 
-            <div className="flex items-center gap-2.5 pb-1">
-              <span className="text-[11px] text-[#a89f8b] font-semibold tracking-[0.25em] uppercase">
-                {category.items.length} Products
+            <motion.h1
+              variants={fadeInUp}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-bold text-white tracking-[-0.02em] leading-[1.08] mb-6 sm:mb-8 drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
+            >
+              Wholesale foodstuff{" "}
+              <span className="block mt-1 sm:mt-2">
+                supplier in{" "}
+                <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#c29633] bg-clip-text text-transparent italic">
+                  Dubai.
+                </span>
               </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#cea945] inline-block" />
-            </div>
+            </motion.h1>
+
+            <motion.p
+              variants={fadeInUp}
+              className="text-[#e7e1d4]/90 text-sm sm:text-base md:text-[18px] leading-[1.75] max-w-[560px] font-light tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
+            >
+              Sourcing premium agricultural commodities across eight core divisions. Verified at origin and delivered worldwide for distributors, restaurants, and importers.
+            </motion.p>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Product Grid: 4 balanced columns */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {category.items.map((item, i) => {
-              const productSlug = slugify(item.name);
-              const productUrl = `/products/${categorySlug}/${productSlug}`;
+      {/* ─── FULL-WIDTH CATALOG GRID ─── */}
+      <section className="bg-[#0b0b0a] relative py-20 md:py-28">
+        <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-[#21332a]/10 blur-[140px] pointer-events-none rounded-full" />
+        <div className="absolute bottom-10 right-0 w-[600px] h-[600px] bg-[#cea945]/[0.03] blur-[150px] pointer-events-none rounded-full" />
 
-              return (
-                <motion.div key={i} variants={fadeInUp}>
-                  <Link
-                    href={productUrl}
-                    className="group relative flex flex-col aspect-[4/5] rounded-2xl overflow-hidden bg-[#141a17] border border-white/[0.07] transition-all duration-500 hover:border-[#cea945]/60 hover:shadow-[0_20px_45px_-12px_rgba(0,0,0,0.85)] hover:-translate-y-1 block"
+        <div className="max-w-[1400px] mx-auto px-[5%] space-y-32 relative z-10">
+          {catalogData.map((category) => {
+            const categorySlug = slugify(category.title);
+            const categoryUrl = `/products/${categorySlug}`;
+
+            return (
+              <motion.div
+                key={category.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-80px" }}
+                variants={staggerContainer}
+                className="relative"
+              >
+                {/* ─── CLICKABLE CATEGORY HEADER ─── */}
+                <motion.div
+                  variants={fadeInUp}
+                  className="flex items-end justify-between pb-5 mb-10 border-b border-white/[0.08]"
+                >
+                  <Link 
+                    href={categoryUrl}
+                    scroll={true}
+                    className="group inline-flex items-baseline gap-4 md:gap-6 cursor-pointer"
                   >
-                    {/* Background Product Image */}
-                    <div className="absolute inset-0 w-full h-full bg-[#0e1210]">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                        quality={85}
-                        className="object-cover object-center transition-transform duration-[1400ms] ease-out group-hover:scale-108 opacity-90 group-hover:opacity-100"
-                      />
+                    <span className="font-serif text-3xl md:text-4xl font-light text-[#cea945]/60 tracking-wider group-hover:text-[#cea945] transition-colors">
+                      {category.id}
+                    </span>
+                    <div>
+                      <h2 className="text-2xl md:text-[34px] font-bold text-white font-serif tracking-tight leading-none group-hover:text-[#cea945] transition-colors flex items-center gap-3">
+                        {category.title}
+                        <span className="text-base md:text-xl text-[#cea945] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
+                          &rarr;
+                        </span>
+                      </h2>
+                      {category.subtitle && (
+                        <p className="hidden sm:block text-[12px] text-[#a89f8b] font-medium tracking-wider uppercase mt-2 group-hover:text-[#cfc8ba] transition-colors">
+                          {category.subtitle}
+                        </p>
+                      )}
                     </div>
+                  </Link>
 
-                    {/* Multi-stage Contrast Gradient Mask */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0a] via-[#0b0b0a]/50 to-transparent opacity-95 transition-opacity duration-500 group-hover:opacity-90" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a]/40 via-transparent to-transparent opacity-60" />
-
-                    {/* Category/Tag Pill */}
-                    {(item.subcategory || item.latin) && (
-                      <div className="absolute top-4 left-4 z-10">
-                        <span className="text-[10px] tracking-[0.18em] uppercase font-semibold text-[#cfc8ba] bg-[#0b0b0a]/75 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10">
-                          {item.subcategory || item.latin}
-                        </span>
-                      </div>
-                    )}
-
-                    {/* Bottom Card Content */}
-                    <div className="relative z-10 p-5 md:p-6 mt-auto flex flex-col justify-end text-left">
-                      <h4 className="text-[17px] md:text-[20px] font-bold text-white font-serif leading-snug tracking-tight group-hover:text-[#cea945] transition-colors duration-300 drop-shadow-md">
-                        {item.name}
-                      </h4>
-
-                      {/* Interactive View Specs drawer */}
-                      <div className="flex items-center justify-between pt-3 mt-3 border-t border-white/[0.08] text-[#a89f8b]">
-                        <span className="text-[11px] font-medium tracking-wider uppercase text-[#a89f8b] group-hover:text-[#cfc8ba] transition-colors">
-                          Export Grade
-                        </span>
-                        <span className="text-xs font-semibold text-[#cea945] flex items-center gap-1.5 transition-transform duration-300 group-hover:translate-x-1">
-                          Specs
-                          <span className="text-sm font-bold leading-none">&rarr;</span>
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Subtle top edge gold highlight on hover */}
-                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#cea945] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <Link
+                    href={categoryUrl}
+                    scroll={true}
+                    className="group flex items-center gap-2.5 pb-1 text-[#a89f8b] hover:text-[#cea945] transition-colors"
+                  >
+                    <span className="text-[11px] font-semibold tracking-[0.25em] uppercase">
+                      {category.items.length} Products
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#cea945] inline-block group-hover:scale-125 transition-transform" />
                   </Link>
                 </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
-      );
-    })}
-  </div>
-</section>
 
-{/* ─── SOURCING ADVANTAGE ─── */}
+                {/* Product Grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                  {category.items.map((item, i) => {
+                    const productSlug = slugify(item.name);
+                    const productUrl = `/products/${categorySlug}/${productSlug}`;
+
+                    return (
+                      <motion.div key={i} variants={fadeInUp}>
+                        <Link
+                          href={productUrl}
+                          scroll={true}
+                          className="group relative flex flex-col aspect-[4/5] rounded-2xl overflow-hidden bg-[#141a17] border border-white/[0.07] transition-all duration-500 hover:border-[#cea945]/60 hover:shadow-[0_20px_45px_-12px_rgba(0,0,0,0.85)] hover:-translate-y-1 block"
+                        >
+                          <div className="absolute inset-0 w-full h-full bg-[#0e1210]">
+                            <Image
+                              src={item.image}
+                              alt={item.name}
+                              fill
+                              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                              quality={85}
+                              className="object-cover object-center transition-transform duration-[1400ms] ease-out group-hover:scale-108 opacity-90 group-hover:opacity-100"
+                            />
+                          </div>
+
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0a] via-[#0b0b0a]/50 to-transparent opacity-95 transition-opacity duration-500 group-hover:opacity-90" />
+                          <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a]/40 via-transparent to-transparent opacity-60" />
+
+                          {(item.subcategory || item.latin) && (
+                            <div className="absolute top-4 left-4 z-10">
+                              <span className="text-[10px] tracking-[0.18em] uppercase font-semibold text-[#cfc8ba] bg-[#0b0b0a]/75 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10">
+                                {item.subcategory || item.latin}
+                              </span>
+                            </div>
+                          )}
+
+                          <div className="relative z-10 p-5 md:p-6 mt-auto flex flex-col justify-end text-left">
+                            <h4 className="text-[17px] md:text-[20px] font-bold text-white font-serif leading-snug tracking-tight group-hover:text-[#cea945] transition-colors duration-300 drop-shadow-md">
+                              {item.name}
+                            </h4>
+
+                            <div className="flex items-center justify-between pt-3 mt-3 border-t border-white/[0.08] text-[#a89f8b]">
+                              <span className="text-[11px] font-medium tracking-wider uppercase text-[#a89f8b] group-hover:text-[#cfc8ba] transition-colors">
+                                Export Grade
+                              </span>
+                              <span className="text-xs font-semibold text-[#cea945] flex items-center gap-1.5 transition-transform duration-300 group-hover:translate-x-1">
+                                Specs
+                                <span className="text-sm font-bold leading-none">&rarr;</span>
+                              </span>
+                            </div>
+                          </div>
+
+                          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#cea945] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ─── SOURCING ADVANTAGE ─── */}
       <section className="px-[5%] py-28 sm:py-36 md:py-40 bg-[#0b0b0a] border-y border-white/5 relative overflow-hidden select-none">
-        
-        {/* ─── CONTAINER TERMINAL & COMMODITY BACKGROUND ─── */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
             src="/images/products/sourcing-bg.webp"
@@ -234,21 +226,14 @@ export default function ProductsClient() {
             quality={92}
             className="object-cover object-right md:object-center opacity-45 scale-105"
           />
-
-          {/* Left-to-right fade: maintains deep contrast behind the editorial headline */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#0b0b0a] via-[#0b0b0a]/85 to-[#0b0b0a]/40" />
-
-          {/* Top & bottom melts into adjacent sections */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0a] via-transparent to-[#0b0b0a]" />
-
-          {/* Subtle gold ambient glow over the port sunset */}
           <div className="absolute top-1/3 right-1/4 w-[600px] h-[350px] bg-[#cea945]/[0.06] blur-[150px] rounded-full pointer-events-none" />
         </div>
 
         <div className="max-w-[1280px] mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            {/* Left Column: Strategic Overview */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -281,7 +266,6 @@ export default function ProductsClient() {
               </motion.p>
             </motion.div>
 
-            {/* Right Column: 4 Consolidator Advantage Cards */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -312,17 +296,14 @@ export default function ProductsClient() {
                   variants={fadeInUp}
                   className="group relative flex items-start gap-5 p-5 sm:p-6 rounded-2xl bg-[#0e1511]/85 backdrop-blur-md border border-white/[0.08] shadow-[0_15px_35px_rgba(0,0,0,0.75)] hover:border-[#cea945]/50 hover:bg-[#121c17]/90 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                 >
-                  {/* Gold hairline indicator on hover */}
                   <div className="absolute top-0 left-0 bottom-0 w-[2.5px] bg-gradient-to-b from-[#cea945] via-[#eed484] to-[#cea945] scale-y-0 group-hover:scale-y-100 transition-transform duration-400 origin-top" />
 
-                  {/* Numeral Badge */}
                   <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/[0.04] border border-[#cea945]/30 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#cea945] group-hover:border-[#cea945] transition-all duration-300">
                     <span className="text-[#cea945] group-hover:text-[#0b0b0a] font-serif font-bold text-xs sm:text-sm">
                       0{i + 1}
                     </span>
                   </div>
 
-                  {/* Text Content */}
                   <div>
                     <h3 className="font-serif font-bold text-[16.5px] sm:text-[17.5px] text-white mb-1.5 group-hover:text-[#cea945] transition-colors duration-300">
                       {item.title}
@@ -340,14 +321,11 @@ export default function ProductsClient() {
       </section>
 
       {/* ─── FAQ & FINAL CTA ─── */}
-{/* ─── FAQ & FINAL CTA ─── */}
       <section className="px-[5%] py-24 sm:py-32 bg-[#0b0b0a] relative overflow-hidden select-none border-t border-white/5">
-        {/* Subtle Ambient Section Glows */}
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#21332a]/20 blur-[140px] pointer-events-none rounded-full" />
         <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[400px] bg-[#cea945]/[0.035] blur-[150px] pointer-events-none rounded-full" />
 
         <div className="max-w-[1240px] mx-auto relative z-10">
-          {/* FAQ Header */}
           <div className="text-center max-w-[840px] mx-auto mb-16 sm:mb-20">
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="w-8 sm:w-10 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
@@ -365,7 +343,6 @@ export default function ProductsClient() {
             </h2>
           </div>
 
-          {/* FAQ Accordion (Max width constrained for optimal readability) */}
           <div className="max-w-[880px] mx-auto space-y-4 mb-24 sm:mb-32">
             {faqsData.map((faq, i) => {
               const isOpen = openFAQ === i;
@@ -417,7 +394,7 @@ export default function ProductsClient() {
             })}
           </div>
 
-          {/* ─── FINAL CTA (Full-Width Executive Horizontal Banner) ─── */}
+          {/* ─── FINAL CTA ─── */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -425,7 +402,6 @@ export default function ProductsClient() {
             variants={fadeInUp}
             className="group relative rounded-3xl border border-white/[0.1] bg-[#0c130f] p-8 sm:p-12 md:p-16 lg:p-20 overflow-hidden shadow-[0_30px_70px_-15px_rgba(0,0,0,0.9)]"
           >
-            {/* Background Image Layer & Multi-Stop Dissolves */}
             <div className="absolute inset-0 z-0 pointer-events-none">
               <Image
                 src="/images/about/cta-bg.webp"
@@ -435,18 +411,12 @@ export default function ProductsClient() {
                 quality={90}
                 className="object-cover object-right opacity-40 transition-transform duration-1000 ease-out group-hover:scale-105"
               />
-
-              {/* Horizontal fade: solid backdrop on the left for crisp copy readability */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#0c130f] via-[#0c130f]/90 to-transparent" />
-
-              {/* Vertical edge fades */}
               <div className="absolute inset-0 bg-gradient-to-b from-[#0c130f]/60 via-transparent to-[#0c130f]/80" />
             </div>
 
-            {/* Top gold ambient hairline accent */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#cea945]/70 to-transparent" />
 
-            {/* Content Grid */}
             <div className="relative z-10 grid lg:grid-cols-[1.2fr_auto] gap-10 lg:gap-16 items-center">
               <div>
                 <div className="flex items-center gap-3 mb-5">
@@ -468,25 +438,24 @@ export default function ProductsClient() {
                 </p>
               </div>
 
-              {/* Action Buttons & Operational Badges */}
               <div className="flex flex-col gap-4 min-w-[240px] sm:min-w-[280px]">
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-3 bg-[#cea945] text-[#0b0b0a] font-bold text-xs uppercase tracking-[0.22em] px-8 py-4 sm:py-5 rounded-lg transition-all duration-300 hover:bg-white hover:shadow-[0_6px_25px_rgba(206,169,69,0.35)] shadow-[0_4px_16px_rgba(206,169,69,0.2)] cursor-pointer"
                 >
-              <span>Request a Quote</span>
-              <svg
-                className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
+                  <span>Request a Quote</span>
+                  <svg
+                    className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
                 </Link>
 
                 <Link
@@ -496,7 +465,6 @@ export default function ProductsClient() {
                   <span>Explore Products</span>
                 </Link>
 
-                {/* Sub-CTA Trust Indicator */}
                 <div className="pt-2 flex items-center justify-center gap-2 text-[10.5px] uppercase tracking-wider text-[#a89f8b] font-medium">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#cea945]" />
                   <span>24h Commercial Response Guaranteed</span>

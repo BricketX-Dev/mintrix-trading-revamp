@@ -60,11 +60,15 @@ export default function ProductClientView({ product, categoryTitle, categorySlug
 
       <div className="max-w-[1300px] mx-auto px-[5%] relative z-10">
         
-        {/* Breadcrumb Navigation */}
+        {/* Breadcrumb Navigation (Now with Clickable Category Link) */}
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="flex flex-wrap items-center gap-2 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-[#a89f8b] mb-12 md:mb-16">
-          <Link href="/products" className="hover:text-[#cea945] transition-colors">Products</Link>
+          <Link href="/products" scroll={true} className="hover:text-[#cea945] transition-colors">
+            Products
+          </Link>
           <span className="text-[#cea945]">&gt;</span>
-          <span className="text-white">{categoryTitle}</span>
+          <Link href={`/products/${categorySlug}`} scroll={true} className="hover:text-[#cea945] transition-colors">
+            {categoryTitle}
+          </Link>
           <span className="text-[#cea945]">&gt;</span>
           <span className="text-white">{product.name}</span>
         </motion.div>
