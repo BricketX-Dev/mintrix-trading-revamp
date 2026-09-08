@@ -53,7 +53,7 @@ export const catalogData: ProductCategory[] = [
       { name: "Cloves", subcategory: "Spices", image: "/images/products/spices/cloves.webp" },
       { name: "Fennel Seeds", subcategory: "Spices", image: "/images/products/spices/fennel-seeds.webp" },
       { name: "Fenugreek", subcategory: "Spices", image: "/images/products/spices/fenugreek.webp" },
-      { name: "Blended Spices", subcategory: "Spices", image: "/images/products/spices/blended-spices.webp" },
+      { name: "Blended Spices", subcategory: "Spices", image: "/images/products/spices/blended-spices1.webp" },
     ],
   },
   {
