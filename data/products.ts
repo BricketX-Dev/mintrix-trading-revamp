@@ -42,7 +42,6 @@ export const catalogData: ProductCategory[] = [
     subtitle: "Bulk Spices Wholesale Supplier Dubai",
     desc: "From single-origin turmeric to blended seasoning mixes, Mintrix Trading supplies spices tested for purity, colour and pesticide residue before export, sourced from the growing regions best suited to each spice.",
     items: [
-      // Spices
       { name: "Turmeric", subcategory: "Spices", image: "/images/products/spices/turmeric.webp" },
       { name: "Chili", subcategory: "Spices", image: "/images/products/spices/chili.webp" },
       { name: "Cumin", subcategory: "Spices", image: "/images/products/spices/cumin.webp" },
@@ -108,7 +107,6 @@ export const catalogData: ProductCategory[] = [
     subtitle: "Halal Frozen Chicken Supplier UAE",
     desc: "Halal-certified frozen chicken sourced from verified export facilities, supplied as whole birds, parts or by-products in branded export cartons, dispatched in temperature-controlled reefer containers to protect the cold chain.",
     items: [
-      // Frozen Chicken
       { name: "Whole Chicken", subcategory: "Frozen Chicken", image: "/images/products/frozen-chicken/whole-chicken.webp" },
       { name: "Chicken Parts", subcategory: "Frozen Chicken", image: "/images/products/frozen-chicken/chicken-parts.webp" },
       { name: "Chicken By-products", subcategory: "Frozen Chicken", image: "/images/products/frozen-chicken/chicken-by-products.webp" },
@@ -142,7 +140,6 @@ export const catalogData: ProductCategory[] = [
     subtitle: "Canned Food Wholesale Supplier UAE",
     desc: "Canned vegetables, seafood, beans and fruit produced to food-safety standards and packed for bulk B2B distribution to distributors, retailers and foodservice buyers.",
     items: [
-      // Canned Food
       { name: "Canned Vegetables", subcategory: "Canned Food", image: "/images/products/canned-food/canned-vegetables.webp" },
       { name: "Canned Fish/Seafood", subcategory: "Canned Food", image: "/images/products/canned-food/canned-fish-seafood.webp" },
       { name: "Canned Beans", subcategory: "Canned Food", image: "/images/products/canned-food/canned-beans.webp" },
@@ -151,20 +148,63 @@ export const catalogData: ProductCategory[] = [
   },
   {
     id: "08",
-    title: "Fresh Produce",
-    subtitle: "Fresh Fruit & Vegetable Importer Dubai",
-    desc: "Exotic and common fresh fruit, plus dehydrated and frozen produce, handled under a controlled cold chain from origin to your destination port.",
+    title: "Fresh Exotic Fruits",
+    subtitle: "Direct Air & Sea Freight Exotic Produce Dubai",
+    desc: "Rare, tropical and high-demand exotic fruits sourced directly from primary growers across Latin America, Africa, and Southeast Asia. Dispatched under stringently monitored cold chains.",
     items: [
-      // Fruits & Veg
-      { name: "Fresh Exotic Fruits", subcategory: "Fruits & Veg", image: "/images/products/fruits-veg/fresh-exotic-fruits.webp" },
-      { name: "Fresh Common Fruits", subcategory: "Fruits & Veg", image: "/images/products/fruits-veg/fresh-common-fruits.webp" },
-      { name: "Dehydrated/Frozen Produce", subcategory: "Fruits & Veg", image: "/images/products/fruits-veg/dehydrated-frozen-produce.webp" },
+      { name: "Granadilla", latin: "Passiflora ligularis", subcategory: "Exotic Fruits", image: "/images/products/granadilla.webp" },
+      { name: "Dragon Fruit", latin: "Selenicereus megalanthus", subcategory: "Exotic Fruits", image: "/images/products/dragonfruit.webp" },
+      { name: "Lulo", latin: "Solanum quitoense", subcategory: "Exotic Fruits", image: "/images/products/lulosolanum.webp" },
+      { name: "Baby Banana", latin: "Musa acuminata", subcategory: "Exotic Fruits", image: "/images/products/Babybanana.webp" },
+      { name: "Fig", latin: "Ficus carica", subcategory: "Exotic Fruits", image: "/images/products/Figficus.webp" },
+      { name: "Purple Passion Fruit", latin: "Passiflora edulis f. edulis", subcategory: "Exotic Fruits", image: "/images/products/Purplepassionfruit.webp" },
+      { name: "Passion Fruit", latin: "Passiflora edulis", subcategory: "Exotic Fruits", image: "/images/products/Passionfruit.webp" },
+      { name: "Tommy Mango", latin: "Mangifera indica 'Tommy Atkins'", subcategory: "Exotic Fruits", image: "/images/products/tomymango.webp" },
+      { name: "Soursop", latin: "Annona muricata", subcategory: "Exotic Fruits", image: "/images/products/soursop.webp" },
+      { name: "Golden Berries", latin: "Physalis peruviana", subcategory: "Exotic Fruits", image: "/images/products/goldenberries.webp" },
+      { name: "Mangosteen", latin: "Garcinia mangostana", subcategory: "Exotic Fruits", image: "/images/products/mangostine.webp" },
+      { name: "Tamarillo", latin: "Solanum betaceum", subcategory: "Exotic Fruits", image: "/images/products/tamarallio.webp" },
+      { name: "Hass Avocado", latin: "Persea americana", subcategory: "Exotic Fruits", image: "/images/products/hassavacado.webp" },
+      { name: "Tahiti Lemon", latin: "Citrus x latifolia", subcategory: "Exotic Fruits", image: "/images/products/tahitilemon.webp" },
+      { name: "Golden Pineapple", latin: "Ananas comosus", subcategory: "Exotic Fruits", image: "/images/products/goldenpineapple.webp" },
+      { name: "Cavendish Banana", latin: "Musa acuminata", subcategory: "Exotic Fruits", image: "/images/products/cavendishbanana.webp" },
+      { name: "Harton Banana", latin: "Musa paradisiaca", subcategory: "Exotic Fruits", image: "/images/products/hartonbanana.webp" },
+      { name: "Cocoa", latin: "Theobroma cacao", subcategory: "Exotic Fruits", image: "/images/products/cocoa.webp" },
+      { name: "Valencia Orange", latin: "Citrus x sinensis", subcategory: "Exotic Fruits", image: "/images/products/valenciaorange.webp" },
+    ],
+  },
+  {
+    id: "09",
+    title: "Fresh Common Fruits",
+    subtitle: "Commercial Grade Wholesale Fresh Fruit Importer UAE",
+    desc: "High-turnover commercial fresh fruits imported continuously from verified orchards globally. Graded for brix content, size, and shelf-life firmness.",
+    items: [
+      { name: "Kiwi", subcategory: "Common Fruits", image: "/images/products/kiwi.webp" },
+      { name: "Strawberry", subcategory: "Common Fruits", image: "/images/products/strawberry.webp" },
+      { name: "Blueberry", subcategory: "Common Fruits", image: "/images/products/blueberry.webp" },
+      { name: "Nectarine", subcategory: "Common Fruits", image: "/images/products/nectarine.webp" },
+      { name: "Plum", subcategory: "Common Fruits", image: "/images/products/plum.webp" },
+      { name: "Damascus", subcategory: "Common Fruits", image: "/images/products/damascus.webp" },
+      { name: "Grape", latin: "Flame | Red Globe | Thompson", subcategory: "Common Fruits", image: "/images/products/grape.webp" },
+      { name: "Cherry", subcategory: "Common Fruits", image: "/images/products/cherry.webp" },
+    ],
+  },
+  {
+    id: "10",
+    title: "Dehydrated & Frozen Produce",
+    subtitle: "IQF Frozen & Dehydrated Fruit Supplier Dubai",
+    desc: "Individual Quick Frozen (IQF) berries and fruit cuts alongside clean dehydrated produce for food service, manufacturers, and bulk distribution.",
+    items: [
+      { name: "Frozen Strawberries", subcategory: "Frozen Fruit", image: "/images/products/frozen strawberries copy.webp" },
+      { name: "Frozen Blueberries", subcategory: "Frozen Fruit", image: "/images/products/frozen blueberries copy.webp" },
+      { name: "Frozen Cherries", subcategory: "Frozen Fruit", image: "/images/products/frozen cherries copy.webp" },
+      { name: "Frozen Kiwi", latin: "Slices | Cubes | Cut in half", subcategory: "Frozen Fruit", image: "/images/products/frozen kiwi copy.webp" },
     ],
   },
 ];
 
 export const faqsData = [
-  { q: "What food products can be imported in bulk to the UAE?", a: "Bulk food products imported to the UAE span grains and cereals, spices, pulses and beans, edible oils and oil seeds, frozen poultry, dry nuts and dry fruits, canned food, and fresh produce — all sourced globally and delivered in bulk." },
+  { q: "What food products can be imported in bulk to the UAE?", a: "Bulk food products imported to the UAE span grains and cereals, spices, pulses and beans, edible oils and oil seeds, frozen poultry, dry nuts and dry fruits, canned food, and fresh exotic/common produce — all sourced globally and delivered in bulk." },
   { q: "What is the minimum order quantity for bulk food in Dubai?", a: "Minimum order quantities vary by product and packing format, often starting at one pallet or a full container load. Mintrix Trading confirms the exact MOQ per item in its 24-hour quotation, alongside packing format and pricing." },
   { q: "Can I order products from more than one category in a single shipment?", a: "Yes. Mintrix Trading regularly consolidates multiple categories — for example rice, spices and dry fruits — into a single container to reduce freight cost, provided packing and handling requirements are compatible." },
   { q: "Do you supply restaurants, supermarkets and hotels directly?", a: "Yes. Mintrix Trading supplies restaurants, supermarkets, hotels, catering companies and distributors directly, in addition to importers and wholesalers, with volumes and packing formats matched to each buyer type." },
