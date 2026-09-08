@@ -71,7 +71,7 @@ export default function Topbar() {
             className="inline-flex items-center gap-2 text-white/90 hover:text-[#cea945] transition-colors duration-300 font-medium tracking-wide"
           >
             <PhoneIcon />
-            <span>+971 58 513 0941</span>
+            <span>+971 54 166 2352</span>
           </a>
 
           <div className="w-[1px] h-3.5 bg-white/10" />
