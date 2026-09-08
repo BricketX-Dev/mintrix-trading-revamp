@@ -60,7 +60,7 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* Main Headline (Shortened for immediate impact) */}
+          {/* Main Headline */}
           <motion.h1 
             variants={itemVariants}
             className="text-white text-[2.75rem] sm:text-5xl md:text-[3.8rem] lg:text-[4.2rem] font-bold leading-[1.1] tracking-tight mb-6"
@@ -69,7 +69,7 @@ export default function Hero() {
             Delivered with Trust.
           </motion.h1>
 
-          {/* Subtext (Concise and punchy) */}
+          {/* Subtext */}
           <motion.p 
             variants={itemVariants}
             className="text-[#cfc8ba] text-[15px] md:text-[17px] leading-[1.6] max-w-[500px] mb-8 font-light"
@@ -94,14 +94,16 @@ export default function Hero() {
             className="flex flex-wrap items-center gap-4"
           >
             <Link
-              href="#products"
-              className="inline-flex items-center justify-center bg-[#cea945] text-[#0b0b0a] font-bold text-[11px] uppercase tracking-[0.2em] px-10 py-4 transition-all duration-300 hover:bg-white hover:text-[#0b0b0a] shadow-[0_4px_14px_rgba(206,169,69,0.2)]"
+              href="/products"
+              scroll={true}
+              className="inline-flex items-center justify-center bg-[#cea945] text-[#0b0b0a] font-bold text-[11px] uppercase tracking-[0.2em] px-10 py-4 rounded-[2px] transition-all duration-300 hover:bg-white hover:text-[#0b0b0a] shadow-[0_4px_14px_rgba(206,169,69,0.2)]"
             >
               Explore Products
             </Link>
             <Link
-              href="#quote"
-              className="inline-flex items-center justify-center bg-transparent border border-white/25 text-white font-bold text-[11px] uppercase tracking-[0.2em] px-10 py-4 transition-all duration-300 hover:border-[#cea945] hover:text-[#cea945]"
+              href="/contact"
+              scroll={true}
+              className="inline-flex items-center justify-center bg-transparent border border-white/25 text-white font-bold text-[11px] uppercase tracking-[0.2em] px-10 py-4 rounded-[2px] transition-all duration-300 hover:border-[#cea945] hover:text-[#cea945]"
             >
               Request a Quote
             </Link>
