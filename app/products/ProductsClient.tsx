@@ -78,7 +78,7 @@ export default function ProductsClient() {
               <span className="block mt-1 sm:mt-2">
                 supplier in{" "}
                 <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#c29633] bg-clip-text text-transparent italic">
-                  Dubai.
+                  Dubai
                 </span>
               </span>
             </motion.h1>

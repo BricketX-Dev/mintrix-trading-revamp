@@ -93,7 +93,7 @@ export default function ProductGrid({
               <span className="inline-block pr-2.5 bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
                 Foodstuff
               </span>{" "}
-              Dubai.
+              Dubai
             </h2>
               <p className="text-[#cfc8ba] text-[15px] sm:text-[16.5px] leading-[1.75] max-w-xl font-light">
                 Bulk agricultural commodities UAE buyers rely on — verified for export grade, moisture thresholds, and complete customs dossiers.
