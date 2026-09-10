@@ -89,7 +89,7 @@ export default function WhyMintrix() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#0e1712] leading-[1.12] tracking-tight">
               The wholesale partner{" "}
               <span className="italic text-[#8c6d23]">
-                UAE buyers rely on.
+                UAE buyers rely on
               </span>
             </h2>
           </div>

@@ -103,7 +103,7 @@ export default function ProcessSection() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] font-serif font-bold text-white tracking-tight leading-[1.12]">
             From inquiry to delivered container,{" "}
             <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
-              handled for you.
+              handled for you
             </span>
           </h2>
         </div>

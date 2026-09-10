@@ -66,7 +66,7 @@ export default function Hero() {
             className="text-white text-[2.75rem] sm:text-5xl md:text-[3.8rem] lg:text-[4.2rem] font-bold leading-[1.1] tracking-tight mb-6"
           >
             Premium Commodities, <br className="hidden sm:block" />
-            Delivered with Trust.
+            Delivered with Trust
           </motion.h1>
 
           {/* Subtext */}

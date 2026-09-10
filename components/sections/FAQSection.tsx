@@ -68,7 +68,7 @@ export default function FAQSection() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#14201a] tracking-tight leading-[1.12]">
             Answers for bulk food{" "}
             <span className="italic text-[#967624]">
-              buyers in the UAE.
+              buyers in the UAE
             </span>
           </h2>
         </div>

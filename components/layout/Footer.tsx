@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { catalogData } from "@/data/products";
@@ -180,8 +182,8 @@ export default function Footer() {
               Privacy Policy
             </Link>
             <span className="text-white/10">•</span>
-            <Link href="/terms" scroll={true} className="hover:text-[#cea945] transition-colors">
-              Terms of Trade
+            <Link href="/terms-and-conditions" scroll={true} className="hover:text-[#cea945] transition-colors">
+              Terms & Conditions
             </Link>
           </div>
         </div>

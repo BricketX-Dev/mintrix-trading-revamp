@@ -109,7 +109,7 @@ export default function AboutClient() {
             <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-bold text-white tracking-[-0.02em] leading-[1.08] mb-6 sm:mb-8 drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
               A global food trading company built since{" "}
               <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#c29633] bg-clip-text text-transparent italic">
-                2016.
+                2016
               </span>
             </motion.h1>
             
@@ -183,7 +183,7 @@ export default function AboutClient() {
             >
               From a small Dubai trading desk to a{" "}
               <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
-                global sourcing network.
+                global sourcing network
               </span>
             </motion.h2>
 
@@ -241,7 +241,7 @@ export default function AboutClient() {
               <span className="w-8 h-[1px] bg-[#cea945]/60" />
             </motion.div>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-[40px] font-bold font-serif leading-[1.1] text-white mb-6">
-              Trading in 14 countries since 2016.
+              Trading in 14 countries since 2016
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-[#a89f8b] leading-[1.8] text-[15px] md:text-[16px] font-light">
               A decade of relationships with growers, mills and export houses across four continents, built on trust, repeat orders and more than $50M in trade executed.
@@ -302,7 +302,7 @@ export default function AboutClient() {
             >
               Why Mintrix Trading exists,{" "}
               <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
-                and where we are headed.
+                and where we are headed
               </span>
             </motion.h2>
           </motion.div>
@@ -411,7 +411,7 @@ export default function AboutClient() {
             >
               The principles behind{" "}
               <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
-                every shipment.
+                every shipment
               </span>
             </motion.h2>
           </motion.div>
@@ -461,7 +461,7 @@ export default function AboutClient() {
               <span className="text-[#cea945] text-[11px] font-bold uppercase tracking-[0.25em]">Documentation</span>
             </motion.div>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-[38px] font-bold font-serif leading-[1.15] text-white mb-6">
-              Every shipment leaves origin fully documented.
+              Every shipment leaves origin fully documented
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-[#cfc8ba] leading-[1.8] text-[15px] md:text-[16px] font-light mb-8">
               As a UAE-registered agricultural commodity trader, Mintrix Trading treats documentation as standard practice, not an afterthought. Every order is prepared with the paperwork buyers and customs authorities need, before it ever reaches your port.
@@ -545,7 +545,7 @@ export default function AboutClient() {
                 <h2 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[46px] text-white leading-[1.12] mb-5 tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
                   A food trading company in Dubai{" "}
                   <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
-                    you can verify.
+                    you can verify
                   </span>
                 </h2>
 
