@@ -3,7 +3,7 @@ import ProductsClient from "./ProductsClient";
 
 export const metadata: Metadata = {
   title: "Wholesale Foodstuff Supplier Dubai | Bulk Food UAE",
-  description: "8 bulk food categories — grains, spices, pulses, oils, frozen poultry, nuts, canned food & fresh produce. Sourced globally, delivered worldwide.",
+  description: "10 bulk food categories — grains, spices, pulses, oils, frozen poultry, nuts, canned food, exotic & common fruit and dehydrated/frozen produce.",
   keywords: "wholesale foodstuff supplier Dubai, bulk food products UAE, agro commodities supplier Dubai, B2B food supplier Dubai, food supplier for restaurants and supermarkets Dubai",
 };
 
@@ -18,7 +18,7 @@ export default function ProductsPage() {
         "name": "What food products can be imported in bulk to the UAE?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Bulk food products imported to the UAE span grains and cereals, spices, pulses and beans, edible oils and oil seeds, frozen poultry, dry nuts and dry fruits, canned food, and fresh produce — all sourced globally and delivered in bulk."
+          "text": "Bulk food products imported to the UAE span grains and cereals, spices, pulses and beans, edible oils and oil seeds, frozen poultry, dry nuts and dry fruits, canned food, fresh exotic fruits, fresh common fruits, and dehydrated & frozen produce — all sourced globally and delivered in bulk."
         }
       },
       {

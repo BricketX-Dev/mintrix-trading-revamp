@@ -149,8 +149,8 @@ export const catalogData: ProductCategory[] = [
   {
     id: "08",
     title: "Fresh Exotic Fruits",
-    subtitle: "Direct Air & Sea Freight Exotic Produce Dubai",
-    desc: "Rare, tropical and high-demand exotic fruits sourced directly from primary growers across Latin America, Africa, and Southeast Asia. Dispatched under stringently monitored cold chains.",
+    subtitle: "Fresh Exotic Fruit Supplier Dubai",
+    desc: "Mango, avocado, dragon fruit and other exotic fruit sourced from verified growing regions worldwide and shipped under a controlled cold chain to preserve freshness from origin to your destination port.",
     items: [
       { name: "Granadilla", latin: "Passiflora ligularis", subcategory: "Exotic Fruits", image: "/images/products/granadilla.webp" },
       { name: "Dragon Fruit", latin: "Selenicereus megalanthus", subcategory: "Exotic Fruits", image: "/images/products/dragonfruit.webp" },
@@ -176,8 +176,8 @@ export const catalogData: ProductCategory[] = [
   {
     id: "09",
     title: "Fresh Common Fruits",
-    subtitle: "Commercial Grade Wholesale Fresh Fruit Importer UAE",
-    desc: "High-turnover commercial fresh fruits imported continuously from verified orchards globally. Graded for brix content, size, and shelf-life firmness.",
+    subtitle: "Fresh Common Fruit Importer Dubai",
+    desc: "Apples, oranges, bananas and other high-volume fresh fruit supplied year-round from multiple origins, graded for size and quality and delivered under the same controlled cold chain.",
     items: [
       { name: "Kiwi", subcategory: "Common Fruits", image: "/images/products/kiwi.webp" },
       { name: "Strawberry", subcategory: "Common Fruits", image: "/images/products/strawberry.webp" },
@@ -192,8 +192,8 @@ export const catalogData: ProductCategory[] = [
   {
     id: "10",
     title: "Dehydrated & Frozen Produce",
-    subtitle: "IQF Frozen & Dehydrated Fruit Supplier Dubai",
-    desc: "Individual Quick Frozen (IQF) berries and fruit cuts alongside clean dehydrated produce for food service, manufacturers, and bulk distribution.",
+    subtitle: "Dehydrated & Frozen Produce Supplier UAE",
+    desc: "Frozen vegetables, IQF fruit and dehydrated produce processed and packed for extended shelf life, supplied in bulk drums, cartons or containers to distributors, retailers and foodservice buyers.",
     items: [
       { name: "Frozen Strawberries", subcategory: "Frozen Fruit", image: "/images/products/frozen strawberries copy.webp" },
       { name: "Frozen Blueberries", subcategory: "Frozen Fruit", image: "/images/products/frozen blueberries copy.webp" },
@@ -204,8 +204,20 @@ export const catalogData: ProductCategory[] = [
 ];
 
 export const faqsData = [
-  { q: "What food products can be imported in bulk to the UAE?", a: "Bulk food products imported to the UAE span grains and cereals, spices, pulses and beans, edible oils and oil seeds, frozen poultry, dry nuts and dry fruits, canned food, and fresh exotic/common produce — all sourced globally and delivered in bulk." },
-  { q: "What is the minimum order quantity for bulk food in Dubai?", a: "Minimum order quantities vary by product and packing format, often starting at one pallet or a full container load. Mintrix Trading confirms the exact MOQ per item in its 24-hour quotation, alongside packing format and pricing." },
-  { q: "Can I order products from more than one category in a single shipment?", a: "Yes. Mintrix Trading regularly consolidates multiple categories — for example rice, spices and dry fruits — into a single container to reduce freight cost, provided packing and handling requirements are compatible." },
-  { q: "Do you supply restaurants, supermarkets and hotels directly?", a: "Yes. Mintrix Trading supplies restaurants, supermarkets, hotels, catering companies and distributors directly, in addition to importers and wholesalers, with volumes and packing formats matched to each buyer type." },
+  { 
+    q: "What food products can be imported in bulk to the UAE?", 
+    a: "Bulk food products imported to the UAE span grains and cereals, spices, pulses and beans, edible oils and oil seeds, frozen poultry, dry nuts and dry fruits, canned food, fresh exotic fruits, fresh common fruits, and dehydrated & frozen produce — all sourced globally and delivered in bulk." 
+  },
+  { 
+    q: "What is the minimum order quantity for bulk food in Dubai?", 
+    a: "Minimum order quantities vary by product and packing format, often starting at one pallet or a full container load. Mintrix Trading confirms the exact MOQ per item in its 24-hour quotation, alongside packing format and pricing." 
+  },
+  { 
+    q: "Can I order products from more than one category in a single shipment?", 
+    a: "Yes. Mintrix Trading regularly consolidates multiple categories — for example rice, spices and dry fruits — into a single container to reduce freight cost, provided packing and handling requirements are compatible." 
+  },
+  { 
+    q: "Do you supply restaurants, supermarkets and hotels directly?", 
+    a: "Yes. Mintrix Trading supplies restaurants, supermarkets, hotels, catering companies and distributors directly, in addition to importers and wholesalers, with volumes and packing formats matched to each buyer type." 
+  },
 ];

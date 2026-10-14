@@ -57,7 +57,7 @@ export default function ProductsClient() {
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="max-w-[780px] mx-auto flex flex-col items-center"
+            className="max-w-[880px] mx-auto flex flex-col items-center"
           >
             <motion.div
               variants={fadeInUp}
@@ -65,29 +65,29 @@ export default function ProductsClient() {
             >
               <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
               <span className="text-[#cea945] text-[10.5px] sm:text-xs font-bold tracking-[0.3em] uppercase drop-shadow-[0_0_12px_rgba(206,169,69,0.5)]">
-                Complete Catalog
+                Our Commodities
               </span>
               <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-l from-transparent to-[#cea945]" />
             </motion.div>
 
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-bold text-white tracking-[-0.02em] leading-[1.08] mb-6 sm:mb-8 drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-serif font-bold text-white tracking-[-0.02em] leading-[1.08] mb-6 sm:mb-8 drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
             >
-              Wholesale foodstuff{" "}
-              <span className="block mt-1 sm:mt-2">
-                supplier in{" "}
-                <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#c29633] bg-clip-text text-transparent italic">
-                  Dubai
-                </span>
+              Wholesale foodstuff supplier in{" "}
+              <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#c29633] bg-clip-text text-transparent italic">
+                Dubai
+              </span>
+              <span className="block mt-2 sm:mt-4 text-2xl sm:text-3xl lg:text-4xl font-light opacity-95">
+                — 10 bulk food categories, sourced worldwide
               </span>
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
-              className="text-[#e7e1d4]/90 text-sm sm:text-base md:text-[18px] leading-[1.75] max-w-[560px] font-light tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
+              className="text-[#e7e1d4]/90 text-sm sm:text-base md:text-[18px] leading-[1.75] max-w-[720px] font-light tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
             >
-              Sourcing premium agricultural commodities across eight core divisions. Verified at origin and delivered worldwide for distributors, restaurants, and importers.
+              Mintrix Trading is a bulk food products supplier to the UAE, working across ten commodity categories for restaurants, supermarkets, hotels, distributors and importers. As an agro commodities supplier based in Dubai, we source each product from wherever it's best grown or produced, verify it at origin, and deliver it worldwide — with one point of contact and one quotation process across every category.
             </motion.p>
           </motion.div>
         </div>
@@ -112,38 +112,53 @@ export default function ProductsClient() {
                 variants={staggerContainer}
                 className="relative"
               >
-                {/* ─── CLICKABLE CATEGORY HEADER ─── */}
+                {/* ─── UPDATED CATEGORY HEADER WITH DESC ─── */}
                 <motion.div
                   variants={fadeInUp}
-                  className="flex items-end justify-between pb-5 mb-10 border-b border-white/[0.08]"
+                  className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 mb-10 border-b border-white/[0.08]"
                 >
-                  <Link 
-                    href={categoryUrl}
-                    scroll={true}
-                    className="group inline-flex items-baseline gap-4 md:gap-6 cursor-pointer"
-                  >
-                    <span className="font-serif text-3xl md:text-4xl font-light text-[#cea945]/60 tracking-wider group-hover:text-[#cea945] transition-colors">
-                      {category.id}
-                    </span>
-                    <div>
-                      <h2 className="text-2xl md:text-[34px] font-bold text-white font-serif tracking-tight leading-none group-hover:text-[#cea945] transition-colors flex items-center gap-3">
-                        {category.title}
-                        <span className="text-base md:text-xl text-[#cea945] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-                          &rarr;
-                        </span>
-                      </h2>
-                      {category.subtitle && (
-                        <p className="hidden sm:block text-[12px] text-[#a89f8b] font-medium tracking-wider uppercase mt-2 group-hover:text-[#cfc8ba] transition-colors">
-                          {category.subtitle}
+                  <div className="flex gap-4 md:gap-6 max-w-[850px]">
+                    <Link 
+                      href={categoryUrl}
+                      scroll={true}
+                      className="group inline-flex cursor-pointer pt-1"
+                    >
+                      <span className="font-serif text-3xl md:text-4xl font-light text-[#cea945]/60 tracking-wider group-hover:text-[#cea945] transition-colors">
+                        {category.id}
+                      </span>
+                    </Link>
+                    
+                    <div className="flex flex-col">
+                      <Link 
+                        href={categoryUrl}
+                        scroll={true}
+                        className="group inline-block cursor-pointer"
+                      >
+                        <h2 className="text-2xl md:text-[34px] font-bold text-white font-serif tracking-tight leading-none group-hover:text-[#cea945] transition-colors flex items-center gap-3">
+                          {category.title}
+                          <span className="text-base md:text-xl text-[#cea945] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
+                            &rarr;
+                          </span>
+                        </h2>
+                        {category.subtitle && (
+                          <p className="hidden sm:block text-[12px] text-[#a89f8b] font-medium tracking-wider uppercase mt-2 group-hover:text-[#cfc8ba] transition-colors">
+                            {category.subtitle}
+                          </p>
+                        )}
+                      </Link>
+                      
+                      {category.desc && (
+                        <p className="mt-3.5 text-[14px] md:text-[15px] leading-[1.75] text-[#cfc8ba] font-light opacity-90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                          {category.desc}
                         </p>
                       )}
                     </div>
-                  </Link>
+                  </div>
 
                   <Link
                     href={categoryUrl}
                     scroll={true}
-                    className="group flex items-center gap-2.5 pb-1 text-[#a89f8b] hover:text-[#cea945] transition-colors"
+                    className="group flex items-center gap-2.5 shrink-0 text-[#a89f8b] hover:text-[#cea945] transition-colors pb-1"
                   >
                     <span className="text-[11px] font-semibold tracking-[0.25em] uppercase">
                       {category.items.length} Products
@@ -252,8 +267,8 @@ export default function ProductsClient() {
                 variants={fadeInUp}
                 className="text-3xl sm:text-4xl lg:text-[2.85rem] font-serif font-bold text-white leading-[1.12] mb-6 tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]"
               >
-                One sourcing partner across{" "}
-                <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
+                One sourcing partner <br className="hidden lg:block" />
+                across <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
                   every category.
                 </span>
               </motion.h2>
@@ -262,7 +277,7 @@ export default function ProductsClient() {
                 variants={fadeInUp}
                 className="text-[#cfc8ba] leading-[1.8] text-[15px] sm:text-[16px] font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
               >
-                Buying multiple commodity types usually means managing fragmented suppliers and disjointed logistics. Mintrix Trading consolidates that into a single relationship: one trade desk, uniform export documentation, and standardized quality verification across every origin port.
+                Buying ten different commodity types usually means managing ten different suppliers, each with its own paperwork, quality standards and lead times. Mintrix Trading consolidates that into a single relationship: one trade manager, one documentation process and one quality standard, whichever category — or combination of categories — you're ordering.
               </motion.p>
             </motion.div>
 
@@ -276,19 +291,19 @@ export default function ProductsClient() {
               {[
                 {
                   title: "Consistent Quality Verification",
-                  desc: "Uniform grading, moisture thresholds, and purity testing executed across every origin prior to vessel booking.",
+                  desc: "Consistent grading and moisture/purity testing across every commodity.",
                 },
                 {
                   title: "Unified Export Documentation",
-                  desc: "One coordinated dossier (Halal, FDA, Certificate of Origin, phytosanitary) regardless of commodity mix.",
+                  desc: "One export documentation set (Halal, FDA, COO, phytosanitary) regardless of product mix.",
                 },
                 {
                   title: "Mixed-Category Consolidation",
-                  desc: "Consolidated container packing across diverse product divisions to optimize freight economics on targeted orders.",
+                  desc: "Mixed-category container consolidation to reduce freight cost on smaller orders.",
                 },
                 {
-                  title: "Single 24-Hour Commercial Quotation",
-                  desc: "A singular commercial quotation encompassing all line items on your requisition with complete CIF/FOB terms.",
+                  title: "Single 24-Hour Quotation",
+                  desc: "A single 24-hour quotation covering every product on your order, not one per category.",
                 },
               ].map((item, i) => (
                 <motion.div
@@ -427,14 +442,14 @@ export default function ProductsClient() {
                 </div>
 
                 <h2 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[46px] text-white leading-[1.12] mb-5 tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
-                  A food trading company in Dubai{" "}
+                  Don't see your product listed?{" "}
                   <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
-                    you can verify.
+                    Ask us anyway.
                   </span>
                 </h2>
 
                 <p className="text-[#cfc8ba] text-sm sm:text-base md:text-[16.5px] max-w-xl leading-[1.8] font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                  Since 2016, Mintrix Trading has built its name on verifiable origin documentation, rigid pre-shipment inspections, and commercial response times you can rely on. Send us your requirements to receive a formal quotation within 24 hours.
+                  Mintrix Trading sources beyond these ten categories on request. Tell us the product, volume and destination, and we'll confirm within the hour whether we can source it.
                 </p>
               </div>
 
@@ -456,13 +471,6 @@ export default function ProductsClient() {
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
                   </svg>
-                </Link>
-
-                <Link
-                  href="/products"
-                  className="inline-flex items-center justify-center gap-3 border border-white/20 bg-[#0b0b0a]/50 backdrop-blur-sm text-white font-bold text-xs uppercase tracking-[0.22em] px-8 py-4 sm:py-5 rounded-lg transition-all duration-300 hover:border-[#cea945] hover:text-[#cea945] cursor-pointer"
-                >
-                  <span>Explore Products</span>
                 </Link>
 
                 <div className="pt-2 flex items-center justify-center gap-2 text-[10.5px] uppercase tracking-wider text-[#a89f8b] font-medium">
