@@ -31,7 +31,8 @@ export default function ProductsClient() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 
   return (
-    <div className="bg-[#0b0b0a] text-white pt-24 md:pt-32 pb-10">
+    
+    <div className="bg-[#0b0b0a] text-white overflow-hidden min-h-screen pb-10">
       
       {/* ─── CINEMATIC HERO SECTION ─── */}
       <section className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-32 sm:py-44 md:py-52 min-h-[75vh] md:min-h-[85vh] flex items-center justify-center border-b border-white/5 select-none">
@@ -79,7 +80,7 @@ export default function ProductsClient() {
                 Dubai
               </span>
               <span className="block mt-2 sm:mt-4 text-2xl sm:text-3xl lg:text-4xl font-light opacity-95">
-                — 10 bulk food categories, sourced worldwide
+                10 bulk food categories, sourced worldwide
               </span>
             </motion.h1>
 
@@ -87,7 +88,7 @@ export default function ProductsClient() {
               variants={fadeInUp}
               className="text-[#e7e1d4]/90 text-sm sm:text-base md:text-[18px] leading-[1.75] max-w-[720px] font-light tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
             >
-              Mintrix Trading is a bulk food products supplier to the UAE, working across ten commodity categories for restaurants, supermarkets, hotels, distributors and importers. As an agro commodities supplier based in Dubai, we source each product from wherever it's best grown or produced, verify it at origin, and deliver it worldwide — with one point of contact and one quotation process across every category.
+              Mintrix Trading is a bulk food products supplier to the UAE, working across ten commodity categories for restaurants, supermarkets, hotels, distributors and importers. As an agro commodities supplier based in Dubai, we source each product from wherever it's best grown or produced, verify it at origin, and deliver it worldwide -with one point of contact and one quotation process across every category.
             </motion.p>
           </motion.div>
         </div>
@@ -277,7 +278,7 @@ export default function ProductsClient() {
                 variants={fadeInUp}
                 className="text-[#cfc8ba] leading-[1.8] text-[15px] sm:text-[16px] font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
               >
-                Buying ten different commodity types usually means managing ten different suppliers, each with its own paperwork, quality standards and lead times. Mintrix Trading consolidates that into a single relationship: one trade manager, one documentation process and one quality standard, whichever category — or combination of categories — you're ordering.
+                Buying ten different commodity types usually means managing ten different suppliers, each with its own paperwork, quality standards and lead times. Mintrix Trading consolidates that into a single relationship: one trade manager, one documentation process and one quality standard, whichever category -or combination of categories -you're ordering.
               </motion.p>
             </motion.div>
 
