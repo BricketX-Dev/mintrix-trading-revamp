@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, Variants } from "framer-motion";
-import { CategoryContent } from "@/data/categoryContent";
+import { CategoryContent, CategorySpec } from "@/data/categoryContent";
 import { catalogData } from "@/data/products";
 
 interface CategoryClientViewProps {
@@ -22,7 +22,6 @@ const staggerContainer: Variants = {
   visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
 };
 
-// Helper to match the category items to the current page
 const slugify = (text: string) =>
   text
     .toString()
@@ -37,7 +36,6 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const pathname = usePathname();
 
-  // ─── BULLETPROOF SCROLL RESTORATION ───
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
@@ -48,19 +46,19 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
     return () => clearTimeout(timeout);
   }, [pathname]);
 
-  // Extract a keyword for the italicized highlight
   const headlineWords = content.hero.headline.split("—");
   const mainHeadline = headlineWords[0].trim();
   const subHeadline = headlineWords[1]?.trim() || "";
 
-  // Find the matching products from the main catalog data
+  // Get the available products for this category to validate links later
   const categoryData = catalogData.find(c => slugify(c.title) === content.slug);
   const categoryItems = categoryData?.items || [];
 
+  // Fallback to split the main headline if catalog title isn't found
+  const dynamicCategoryTitle = categoryData?.title || mainHeadline.replace(/ supplier.*/i, "");
+
   return (
     <div className="bg-[#0b0b0a] text-white pt-24 md:pt-32 pb-10">
-      
-      {/* ─── CINEMATIC HERO SECTION ─── */}
       <section className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pt-20 pb-20 md:pt-28 md:pb-28 flex items-center border-b border-white/5 select-none">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#cea945]/[0.04] blur-[150px] rounded-full" />
@@ -70,8 +68,6 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
 
         <div className="max-w-[1240px] mx-auto relative z-10 w-full">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-[900px]">
-            
-            {/* Breadcrumb Navigation */}
             <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-2 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-[#a89f8b] mb-10">
               {content.hero.breadcrumb.split('/').map((crumb, idx, arr) => (
                 <span key={idx} className="flex items-center gap-2">
@@ -99,13 +95,11 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
         </div>
       </section>
 
-      {/* ─── CATEGORY PRODUCTS GRID (NEW SECTION) ─── */}
       {categoryItems.length > 0 && (
         <section className="px-[5%] py-20 bg-[#0b0b0a] relative z-10 border-b border-white/5">
           <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#cea945]/[0.03] blur-[150px] pointer-events-none rounded-full" />
           <div className="max-w-[1400px] mx-auto relative z-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerContainer} className="relative">
-              
               <motion.div variants={fadeInUp} className="flex items-center gap-3.5 mb-10">
                 <span className="w-8 sm:w-10 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
                 <span className="text-[#cea945] text-[10.5px] sm:text-xs font-bold uppercase tracking-[0.28em] drop-shadow-[0_0_10px_rgba(206,169,69,0.35)]">
@@ -174,12 +168,9 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
         </section>
       )}
 
-      {/* ─── SOURCING ADVANTAGE / BENEFITS ─── */}
       <section className="px-[5%] py-24 md:py-32 bg-[#0b0b0a] relative z-10 border-b border-white/5">
         <div className="max-w-[1240px] mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerContainer} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
-            {/* Sticky Left Column */}
             <motion.div variants={fadeInUp} className="lg:col-span-5 lg:sticky lg:top-32">
               <div className="flex items-center gap-3.5 mb-5">
                 <span className="w-8 sm:w-10 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
@@ -199,7 +190,6 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
                 </span>
               </h2>
 
-              {/* Added Image Container */}
               <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[#0e1511] border border-white/[0.08] shadow-[0_15px_40px_rgba(0,0,0,0.6)] group">
                 <Image
                   src="/images/category/why_mintrix.png"
@@ -214,7 +204,6 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
               </div>
             </motion.div>
 
-            {/* Right Column: Benefits Grid */}
             <div className="lg:col-span-7 grid gap-4 sm:gap-4.5">
               {content.benefits.map((benefit, i) => (
                 <motion.div key={i} variants={fadeInUp} className="group relative flex items-start gap-5 p-6 sm:p-7 rounded-2xl bg-[#0e1511]/85 backdrop-blur-md border border-white/[0.08] shadow-[0_15px_35px_rgba(0,0,0,0.75)] hover:border-[#cea945]/50 hover:bg-[#121c17]/90 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
@@ -232,12 +221,10 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
                 </motion.div>
               ))}
             </div>
-
           </motion.div>
         </div>
       </section>
 
-      {/* ─── PRODUCT TYPES DIRECTORY ─── */}
       <section className="px-[5%] py-24 md:py-32 bg-[#0b0b0a] relative overflow-hidden select-none">
         <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[#21332a]/10 blur-[150px] pointer-events-none rounded-full" />
         
@@ -251,7 +238,7 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
               <span className="w-8 sm:w-10 h-[1px] bg-gradient-to-l from-transparent to-[#cea945]" />
             </motion.div>
             <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl lg:text-[2.65rem] font-bold font-serif text-white tracking-tight leading-[1.15]">
-              Dehydrated & Frozen <br />
+              {dynamicCategoryTitle} <br />
               <span className="bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
                 Product Types.
               </span>
@@ -266,11 +253,12 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
                 <h3 className="text-xl md:text-2xl font-bold text-white font-serif leading-snug tracking-tight mb-4 group-hover:text-[#cea945] transition-colors duration-300">
                   {prod.title}
                 </h3>
+                
                 <p className="text-[#cfc8ba] leading-[1.75] font-light text-[15px] mb-8 flex-grow">
                   {prod.description}
                 </p>
 
-                <div className="bg-[#0b0b0a]/50 p-5 rounded-xl border border-white/5 group-hover:border-white/10 transition-colors">
+                <div className="bg-[#0b0b0a]/50 p-5 rounded-xl border border-white/5 group-hover:border-white/10 transition-colors mt-auto">
                   <p className="text-[#a89f8b] text-[11px] font-bold uppercase tracking-wider mb-2">
                     Common Question
                   </p>
@@ -287,7 +275,6 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
         </div>
       </section>
 
-      {/* ─── PACKING & SPECS TABLE ─── */}
       <section className="px-[5%] py-24 bg-[#0e1210] relative overflow-hidden select-none border-y border-white/5">
         <div className="max-w-[1240px] mx-auto relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerContainer} className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -304,30 +291,76 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
             </div>
           </motion.div>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="overflow-x-auto rounded-2xl border border-white/10 bg-[#141a17]/50 backdrop-blur-sm shadow-2xl">
-            <table className="w-full text-left whitespace-nowrap min-w-[700px]">
-              <thead>
-                <tr className="border-b border-white/10 bg-[#16221c]">
-                  <th className="py-6 px-8 text-[#cea945] font-bold uppercase tracking-[0.2em] text-[11px]">Product</th>
-                  <th className="py-6 px-8 text-[#cea945] font-bold uppercase tracking-[0.2em] text-[11px]">Typical Packing</th>
-                  <th className="py-6 px-8 text-[#cea945] font-bold uppercase tracking-[0.2em] text-[11px]">Notes</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-white/5">
-                {content.packingTable.map((row, i) => (
-                  <tr key={i} className="hover:bg-[#16221c]/80 transition-colors group">
-                    <td className="py-5 px-8 text-[15px] font-bold text-white font-serif group-hover:text-[#cea945] transition-colors">{row.product}</td>
-                    <td className="py-5 px-8 text-[14px] text-[#cfc8ba] font-light">{row.packing}</td>
-                    <td className="py-5 px-8 text-[14px] text-[#a89f8b] italic font-light">{row.notes}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </motion.div>
+          {(() => {
+            const groupedSpecs = content.packingTable.reduce((acc, row) => {
+              const groupName = row.group || 'Default';
+              if (!acc[groupName]) acc[groupName] = [];
+              acc[groupName].push(row);
+              return acc;
+            }, {} as Record<string, CategorySpec[]>);
+
+            return Object.entries(groupedSpecs).map(([groupName, items], gIdx) => (
+              <motion.div 
+                key={gIdx} 
+                initial="hidden" 
+                whileInView="visible" 
+                viewport={{ once: true }} 
+                variants={fadeInUp} 
+                className="mb-14 last:mb-0"
+              >
+                {groupName !== 'Default' && (
+                  <h3 className="text-xl md:text-2xl font-serif font-bold text-[#e7e1d4] mb-5 tracking-tight flex items-center gap-3 pl-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#cea945]"></span>
+                    {groupName}
+                  </h3>
+                )}
+                
+                <div className="overflow-x-auto rounded-2xl border border-white/10 bg-[#141a17]/50 backdrop-blur-sm shadow-2xl">
+                  <table className="w-full text-left whitespace-nowrap min-w-[700px]">
+                    <thead>
+                      <tr className="border-b border-white/10 bg-[#16221c]">
+                        <th className="py-6 px-8 text-[#cea945] font-bold uppercase tracking-[0.2em] text-[11px]">Product</th>
+                        <th className="py-6 px-8 text-[#cea945] font-bold uppercase tracking-[0.2em] text-[11px]">Typical Packing</th>
+                        <th className="py-6 px-8 text-[#cea945] font-bold uppercase tracking-[0.2em] text-[11px]">Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/5">
+                      {items.map((row, i) => {
+                        const productSlug = slugify(row.product);
+                        const productUrl = `/products/${content.slug}/${productSlug}`;
+                        
+                        const isProductClickable = categoryItems.some(item => slugify(item.name) === productSlug);
+
+                        return (
+                          <tr key={i} className="hover:bg-[#16221c]/80 transition-colors group">
+                            <td className="py-5 px-8 text-[15px] font-bold font-serif">
+                              {isProductClickable ? (
+                                <Link 
+                                  href={productUrl} 
+                                  className="text-white hover:text-[#cea945] transition-colors inline-block w-full"
+                                >
+                                  {row.product}
+                                </Link>
+                              ) : (
+                                <span className="text-white inline-block w-full cursor-default">
+                                  {row.product}
+                                </span>
+                              )}
+                            </td>
+                            <td className="py-5 px-8 text-[14px] text-[#cfc8ba] font-light">{row.packing}</td>
+                            <td className="py-5 px-8 text-[14px] text-[#a89f8b] italic font-light">{row.notes}</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </motion.div>
+            ));
+          })()}
         </div>
       </section>
 
-      {/* ─── FAQ SECTION ─── */}
       <section className="px-[5%] py-24 sm:py-32 bg-[#0b0b0a] relative overflow-hidden select-none">
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#21332a]/20 blur-[140px] pointer-events-none rounded-full" />
         
@@ -398,7 +431,6 @@ export default function CategoryClientView({ content }: CategoryClientViewProps)
             })}
           </div>
 
-          {/* ─── FINAL CTA ─── */}
           <motion.div
             initial="hidden"
             whileInView="visible"

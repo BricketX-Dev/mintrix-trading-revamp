@@ -1,6 +1,7 @@
 // data/categoryContent.ts
 
 export interface CategorySpec {
+  group?: string; // Allows splitting the packing table into separate tables
   product: string;
   packing: string;
   notes: string;
@@ -37,7 +38,7 @@ export interface CategoryContent {
 }
 
 export const categoryDetailedData: Record<string, CategoryContent> = {
-  "dehydrated-and-frozen-produce": { // Matches the slugified category title
+  "dehydrated-and-frozen-produce": { 
     slug: "dehydrated-and-frozen-produce",
     meta: {
       title: "Frozen & Dehydrated Produce Supplier UAE | Mintrix Trading",
@@ -101,13 +102,13 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
       }
     ],
     packingTable: [
-      { product: "Frozen Mixed Vegetables", packing: "Bulk cartons, freezer container", notes: "Blanched and quick-frozen" },
-      { product: "Frozen Peas", packing: "Bulk cartons, freezer container", notes: "Quick-frozen, year-round" },
-      { product: "Frozen Corn", packing: "Bulk cartons, freezer container", notes: "Quick-frozen kernels" },
-      { product: "IQF Frozen Fruit", packing: "Bulk cartons, freezer container", notes: "Loose-frozen, easy portioning" },
-      { product: "Frozen Potato Products", packing: "Bulk cartons, freezer container", notes: "Par-fried, quick-prep" },
-      { product: "Dehydrated Onion", packing: "Bags, drums, bulk container", notes: "Flakes, granules or powder" },
-      { product: "Dehydrated Garlic", packing: "Bags, drums, bulk container", notes: "Flakes, granules or powder" }
+      { group: "Frozen Produce", product: "Frozen Mixed Vegetables", packing: "Bulk cartons, freezer container", notes: "Blanched and quick-frozen" },
+      { group: "Frozen Produce", product: "Frozen Peas", packing: "Bulk cartons, freezer container", notes: "Quick-frozen, year-round" },
+      { group: "Frozen Produce", product: "Frozen Corn", packing: "Bulk cartons, freezer container", notes: "Quick-frozen kernels" },
+      { group: "Frozen Produce", product: "IQF Frozen Fruit", packing: "Bulk cartons, freezer container", notes: "Loose-frozen, easy portioning" },
+      { group: "Frozen Produce", product: "Frozen Potato Products", packing: "Bulk cartons, freezer container", notes: "Par-fried, quick-prep" },
+      { group: "Dehydrated Produce", product: "Dehydrated Onion", packing: "Bags, drums, bulk container", notes: "Flakes, granules or powder" },
+      { group: "Dehydrated Produce", product: "Dehydrated Garlic", packing: "Bags, drums, bulk container", notes: "Flakes, granules or powder" }
     ],
     faqs: [
       {
@@ -130,8 +131,7 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
     }
   },
 
-
-  "edible-oils-and-oil-seeds": {
+"edible-oils-and-oil-seeds": {
     slug: "edible-oils-and-oil-seeds",
     meta: {
       title: "Edible Oils & Oil Seeds Wholesale Dubai | Mintrix Trading",
@@ -165,21 +165,19 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
       }
     ],
     packingTable: [
-      { 
-        product: "Cooking Oil (Bulk)", 
-        packing: "Bulk drums, flexitanks, ISO tank containers", 
-        notes: "Grade-1 refined, FFA & colour verified" 
-      },
-      { 
-        product: "Cooking Oil (Retail)", 
-        packing: "Retail-ready bottles or jerrycans", 
-        notes: "Available for smaller volume orders" 
-      },
-      { 
-        product: "Oil Seeds", 
-        packing: "Bulk or retail-ready bags", 
-        notes: "Cleaned, graded, and moisture-tested" 
-      }
+      { group: "Cooking Oil", product: "Sunflower Oil", packing: "Bulk drums, flexitanks, ISO tank containers", notes: "Grade-1 refined, FFA & colour verified" },
+      { group: "Cooking Oil", product: "Palm Oil", packing: "Bulk drums, flexitanks, ISO tank containers", notes: "Grade-1 refined, FFA & colour verified" },
+      { group: "Cooking Oil", product: "Soybean Oil", packing: "Bulk drums, flexitanks, ISO tank containers", notes: "Grade-1 refined, FFA & colour verified" },
+      { group: "Cooking Oil", product: "Corn Oil", packing: "Bulk drums, flexitanks, ISO tank containers", notes: "Grade-1 refined, FFA & colour verified" },
+      { group: "Cooking Oil", product: "Canola/Rapeseed Oil", packing: "Bulk drums, flexitanks, ISO tank containers", notes: "Grade-1 refined, FFA & colour verified" },
+      { group: "Cooking Oil", product: "Olive Oil", packing: "Bulk drums, flexitanks, ISO tank containers", notes: "Grade-1 refined, FFA & colour verified" },
+      { group: "Cooking Oil", product: "Vegetable Oil (Blended)", packing: "Bulk drums, flexitanks, ISO tank containers", notes: "Grade-1 refined, FFA & colour verified" },
+      { group: "Cooking Oil", product: "Sesame Oil", packing: "Bulk drums, flexitanks, ISO tank containers", notes: "Grade-1 refined, FFA & colour verified" },
+      
+      { group: "Oil Seeds", product: "Sesame Seeds", packing: "Bulk or retail-ready bags", notes: "Cleaned, graded, and moisture-tested" },
+      { group: "Oil Seeds", product: "Sunflower Seeds", packing: "Bulk or retail-ready bags", notes: "Cleaned, graded, and moisture-tested" },
+      { group: "Oil Seeds", product: "Flaxseed", packing: "Bulk or retail-ready bags", notes: "Cleaned, graded, and moisture-tested" },
+      { group: "Oil Seeds", product: "Chia Seeds", packing: "Bulk or retail-ready bags", notes: "Cleaned, graded, and moisture-tested" }
     ],
     faqs: [
       {
@@ -201,7 +199,6 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
       buttonText: "Request a Quote"
     }
   },
-
 
   "fresh-common-fruits": {
     slug: "fresh-common-fruits",
@@ -295,7 +292,6 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
       buttonText: "Request a Quote"
     }
   },
-
 
   "fresh-exotic-fruits": {
     slug: "fresh-exotic-fruits",
@@ -397,8 +393,7 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
     }
   },
 
-
-  "grains-and-cereals": {
+"grains-and-cereals": {
     slug: "grains-and-cereals",
     meta: {
       title: "Grains & Cereals Wholesale Dubai | Rice & Flour",
@@ -414,8 +409,7 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
       "Moisture-tested and graded before every shipment leaves origin",
       "Packing formats matched to buyer type — retail-ready bags or bulk container loads",
       "One quotation covering both rice and wheat flour if you're ordering across the category",
-      "Halal, FDA, Certificate of Origin and phytosanitary documentation prepared for every order",
-      "A dedicated trade manager and a full quotation within 24 hours"
+      "Halal, FDA, Certificate of Origin and phytosanitary documentation prepared for every order"
     ],
     productTypes: [
       {
@@ -432,16 +426,19 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
       }
     ],
     packingTable: [
-      { 
-        product: "Rice (All Varieties)", 
-        packing: "25kg/50kg bags, bulk containers", 
-        notes: "Moisture-tested, graded at origin" 
-      },
-      { 
-        product: "Wheat Flour", 
-        packing: "25kg/50kg bags, bulk containers", 
-        notes: "Consistent protein and ash specifications" 
-      }
+      { group: "Rice", product: "Basmati Rice", packing: "25kg/50kg bags, bulk containers", notes: "Moisture-tested, graded at origin" },
+      { group: "Rice", product: "Non-Basmati / White Rice (IRRI)", packing: "25kg/50kg bags, bulk containers", notes: "Moisture-tested, graded at origin" },
+      { group: "Rice", product: "Parboiled Rice (Sella)", packing: "25kg/50kg bags, bulk containers", notes: "Moisture-tested, graded at origin" },
+      { group: "Rice", product: "Jasmine Rice", packing: "25kg/50kg bags, bulk containers", notes: "Moisture-tested, graded at origin" },
+      { group: "Rice", product: "Sona Masoori", packing: "25kg/50kg bags, bulk containers", notes: "Moisture-tested, graded at origin" },
+      { group: "Rice", product: "Brown Rice", packing: "25kg/50kg bags, bulk containers", notes: "Moisture-tested, graded at origin" },
+      { group: "Rice", product: "Glutinous / Sticky Rice", packing: "25kg/50kg bags, bulk containers", notes: "Moisture-tested, graded at origin" },
+      { group: "Rice", product: "Black Rice", packing: "25kg/50kg bags, bulk containers", notes: "Moisture-tested, graded at origin" },
+      
+      { group: "Wheat Flour", product: "All-Purpose Flour", packing: "25kg/50kg bags, bulk containers", notes: "Consistent protein and ash specifications" },
+      { group: "Wheat Flour", product: "Whole Wheat Flour", packing: "25kg/50kg bags, bulk containers", notes: "Consistent protein and ash specifications" },
+      { group: "Wheat Flour", product: "Bread Flour (High Protein)", packing: "25kg/50kg bags, bulk containers", notes: "Consistent protein and ash specifications" },
+      { group: "Wheat Flour", product: "Semolina (Suji/Rava)", packing: "25kg/50kg bags, bulk containers", notes: "Consistent protein and ash specifications" }
     ],
     faqs: [
       {
@@ -464,8 +461,7 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
     }
   },
 
-
-  "nuts-and-dry-fruits": {
+"nuts-and-dry-fruits": {
     slug: "nuts-and-dry-fruits",
     meta: {
       title: "Bulk Nuts & Dry Fruits Wholesale Dubai | Mintrix",
@@ -499,16 +495,19 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
       }
     ],
     packingTable: [
-      { 
-        product: "Dry Nuts", 
-        packing: "Retail-ready bags, 20ft/40ft containers", 
-        notes: "Graded by size, moisture-tested" 
-      },
-      { 
-        product: "Dry Fruits", 
-        packing: "Retail-ready bags, 20ft/40ft containers", 
-        notes: "Graded, SO2 & microbial tested" 
-      }
+      { group: "Dry Nuts", product: "Almonds", packing: "Retail-ready bags, 20ft/40ft containers", notes: "Graded by size, moisture-tested" },
+      { group: "Dry Nuts", product: "Cashews", packing: "Retail-ready bags, 20ft/40ft containers", notes: "Graded by size, moisture-tested" },
+      { group: "Dry Nuts", product: "Walnuts", packing: "Retail-ready bags, 20ft/40ft containers", notes: "Graded by size, moisture-tested" },
+      { group: "Dry Nuts", product: "Pistachios", packing: "Retail-ready bags, 20ft/40ft containers", notes: "Graded by size, moisture-tested" },
+      { group: "Dry Nuts", product: "Peanuts", packing: "Retail-ready bags, 20ft/40ft containers", notes: "Graded by size, moisture-tested" },
+      { group: "Dry Nuts", product: "Hazelnuts", packing: "Retail-ready bags, 20ft/40ft containers", notes: "Graded by size, moisture-tested" },
+      { group: "Dry Nuts", product: "Pine Nuts", packing: "Retail-ready bags, 20ft/40ft containers", notes: "Graded by size, moisture-tested" },
+      
+      { group: "Dry Fruits", product: "Dates", packing: "Retail-ready bags, 20ft/40ft containers", notes: "Graded, SO2 & microbial tested" },
+      { group: "Dry Fruits", product: "Raisins", packing: "Retail-ready bags, 20ft/40ft containers", notes: "Graded, SO2 & microbial tested" },
+      { group: "Dry Fruits", product: "Apricots", packing: "Retail-ready bags, 20ft/40ft containers", notes: "Graded, SO2 & microbial tested" },
+      { group: "Dry Fruits", product: "Figs", packing: "Retail-ready bags, 20ft/40ft containers", notes: "Graded, SO2 & microbial tested" },
+      { group: "Dry Fruits", product: "Prunes", packing: "Retail-ready bags, 20ft/40ft containers", notes: "Graded, SO2 & microbial tested" }
     ],
     faqs: [
       {
@@ -531,9 +530,7 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
     }
   },
 
-
-
-  "poultry-and-protein": {
+"poultry-and-protein": {
     slug: "poultry-and-protein",
     meta: {
       title: "Halal Frozen Chicken Supplier UAE | Mintrix",
@@ -562,7 +559,20 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
     ],
     packingTable: [
       { 
-        product: "Frozen Chicken (Whole, Parts, By-products)", 
+        group: "Frozen Chicken", 
+        product: "Whole Chicken", 
+        packing: "Temperature-controlled reefer containers", 
+        notes: "Halal-certified, cold chain maintained end-to-end" 
+      },
+      { 
+        group: "Frozen Chicken", 
+        product: "Chicken Parts", 
+        packing: "Temperature-controlled reefer containers", 
+        notes: "Halal-certified, cold chain maintained end-to-end" 
+      },
+      { 
+        group: "Frozen Chicken", 
+        product: "Chicken By-products", 
         packing: "Temperature-controlled reefer containers", 
         notes: "Halal-certified, cold chain maintained end-to-end" 
       }
@@ -616,11 +626,10 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
       }
     ],
     packingTable: [
-      { 
-        product: "Canned Food (All Varieties)", 
-        packing: "Case packs, pallets, full container loads", 
-        notes: "Produced to food-safety standards, private-label available" 
-      }
+      { group: "Canned Food", product: "Canned Vegetables", packing: "Case packs, pallets, full container loads", notes: "Produced to food-safety standards, private-label available" },
+      { group: "Canned Food", product: "Canned Fish/Seafood", packing: "Case packs, pallets, full container loads", notes: "Produced to food-safety standards, private-label available" },
+      { group: "Canned Food", product: "Canned Beans", packing: "Case packs, pallets, full container loads", notes: "Produced to food-safety standards, private-label available" },
+      { group: "Canned Food", product: "Canned Fruit", packing: "Case packs, pallets, full container loads", notes: "Produced to food-safety standards, private-label available" }
     ],
     faqs: [
       {
@@ -643,7 +652,6 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
     }
   },
 
-
   "pulses-and-legumes": {
     slug: "pulses-and-legumes",
     meta: {
@@ -660,8 +668,7 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
       "Cleaned, graded and moisture-tested before every shipment leaves origin",
       "Packing formats matched to buyer type — retail-ready bags or bulk container loads",
       "One quotation covering both pulses and beans if you're ordering across the category",
-      "Halal, FDA, Certificate of Origin and phytosanitary documentation prepared for every order",
-      "A dedicated trade manager and a full quotation within 24 hours"
+      "Halal, FDA, Certificate of Origin and phytosanitary documentation prepared for every order"
     ],
     productTypes: [
       {
@@ -678,16 +685,19 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
       }
     ],
     packingTable: [
-      { 
-        product: "Pulses (Chickpeas, Lentils, Dal)", 
-        packing: "25kg/50kg bags, bulk containers", 
-        notes: "Cleaned, graded, moisture-tested" 
-      },
-      { 
-        product: "Beans (Kidney, Black, Soy, Navy)", 
-        packing: "25kg/50kg bags, bulk containers", 
-        notes: "Sorted, graded to buyer specification" 
-      }
+      { group: "Pulses", product: "Chickpeas", packing: "25kg/50kg bags, bulk containers", notes: "Cleaned, graded, moisture-tested" },
+      { group: "Pulses", product: "Lentils (Masoor)", packing: "25kg/50kg bags, bulk containers", notes: "Cleaned, graded, moisture-tested" },
+      { group: "Pulses", product: "Moong Dal", packing: "25kg/50kg bags, bulk containers", notes: "Cleaned, graded, moisture-tested" },
+      { group: "Pulses", product: "Black Gram (Urad)", packing: "25kg/50kg bags, bulk containers", notes: "Cleaned, graded, moisture-tested" },
+      { group: "Pulses", product: "Pigeon Peas (Toor)", packing: "25kg/50kg bags, bulk containers", notes: "Cleaned, graded, moisture-tested" },
+      { group: "Pulses", product: "Green/Yellow Peas", packing: "25kg/50kg bags, bulk containers", notes: "Cleaned, graded, moisture-tested" },
+      { group: "Beans", product: "Kidney Beans", packing: "25kg/50kg bags, bulk containers", notes: "Sorted, graded to buyer specification" },
+      { group: "Beans", product: "Black Beans", packing: "25kg/50kg bags, bulk containers", notes: "Sorted, graded to buyer specification" },
+      { group: "Beans", product: "Soy Beans", packing: "25kg/50kg bags, bulk containers", notes: "Sorted, graded to buyer specification" },
+      { group: "Beans", product: "Navy Beans", packing: "25kg/50kg bags, bulk containers", notes: "Sorted, graded to buyer specification" },
+      { group: "Beans", product: "Pinto Beans", packing: "25kg/50kg bags, bulk containers", notes: "Sorted, graded to buyer specification" },
+      { group: "Beans", product: "Butter/Lima Beans", packing: "25kg/50kg bags, bulk containers", notes: "Sorted, graded to buyer specification" },
+      { group: "Beans", product: "Adzuki Beans", packing: "25kg/50kg bags, bulk containers", notes: "Sorted, graded to buyer specification" }
     ],
     faqs: [
       {
@@ -709,7 +719,6 @@ export const categoryDetailedData: Record<string, CategoryContent> = {
       buttonText: "Request a Quote"
     }
   },
-
 
   "spices-and-seasonings": {
     slug: "spices-and-seasonings",
