@@ -65,7 +65,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-white text-[2.75rem] sm:text-5xl md:text-[3.8rem] lg:text-[4.2rem] font-bold leading-[1.1] tracking-tight mb-6"
           >
-            Food trading company in Dubai, <br className="hidden sm:block" />
+            Food trading company in Dubai <br className="hidden sm:block" />
           </motion.h1>
 
           {/* Subtext */}
