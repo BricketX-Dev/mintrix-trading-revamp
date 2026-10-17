@@ -14,7 +14,7 @@ const faqs = [
   {
     question: "Which is the best foodstuff trading company in Dubai?",
     answer:
-      "A strong foodstuff trading company in Dubai combines global sourcing, origin quality checks, full export documentation and reliable logistics. Mintrix Trading offers all four — sourcing from 50+ countries and delivering to 14, from its Deira office in Dubai.",
+      "A strong foodstuff trading company in Dubai combines global sourcing, origin quality checks, full export documentation and reliable logistics. Mintrix Trading offers all four - sourcing from 50+ countries and delivering to 14, from its Deira office in Dubai.",
   },
   {
     question: "How do I buy bulk food for the UAE market?",
@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "What food products can be imported in bulk to the UAE?",
     answer:
-      "Bulk food products imported to the UAE span grains and cereals, spices, pulses and beans, edible oils and oil seeds, frozen poultry, dry nuts and dry fruits, canned food, and fresh produce — all sourced globally and delivered in bulk.",
+      "Bulk food products imported to the UAE span grains and cereals, spices, pulses and beans, edible oils and oil seeds, frozen poultry, dry nuts and dry fruits, canned food, and fresh produce - all sourced globally and delivered in bulk.",
   },
   {
     question: "Is your frozen chicken halal-certified?",
@@ -34,7 +34,7 @@ const faqs = [
   {
     question: "How fast can I get a quotation?",
     answer:
-      "Inquiries are confirmed within the hour, and a full quotation — specification, packing, certifications and delivery timeline — follows within 24 hours.",
+      "Inquiries are confirmed within the hour, and a full quotation - specification, packing, certifications and delivery timeline - follows within 24 hours.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function FAQSection() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="w-8 sm:w-10 h-[2px] bg-[#cea945]" />
             <span className="text-[#967624] text-[11px] sm:text-xs font-bold uppercase tracking-[0.28em]">
-              Trade Dossier &amp; FAQs
+              Common Questions
             </span>
             <span className="w-8 sm:w-10 h-[2px] bg-[#cea945]" />
           </div>

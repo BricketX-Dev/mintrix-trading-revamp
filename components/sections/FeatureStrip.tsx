@@ -7,25 +7,25 @@ export default function FeatureStrip() {
     {
       no: "01",
       title: "Best-Origin Sourcing",
-      desc: "Verified agricultural suppliers across the world's best harvest origins.",
+      desc: "Best-origin sourcing from verified suppliers",
       icon: "/images/home/icons/best-origin.png",
     },
     {
       no: "02",
       title: "Quality Verified",
-      desc: "Every container consignment inspected at origin prior to vessel dispatch.",
+      desc: "Quality verified at origin, every shipment",
       icon: "/images/home/icons/quality-verified.png",
     },
     {
       no: "03",
       title: "Full Documentation",
-      desc: "Halal, FDA, COO & phytosanitary export dossiers prepared in-house.",
+      desc: "Halal, FDA, COO & full export documentation",
       icon: "/images/home/icons/full-document.png",
     },
     {
       no: "04",
       title: "Live Tracking",
-      desc: "End-to-end maritime logistics tracking directly into your destination port.",
+      desc: "Logistics & live container tracking to your port",
       icon: "/images/home/icons/live-tracking.png",
     },
   ];

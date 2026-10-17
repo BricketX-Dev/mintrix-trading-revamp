@@ -95,7 +95,7 @@ export default function ProcessSection() {
           <div className="flex items-center justify-center gap-3 mb-4 sm:mb-5">
             <span className="w-8 sm:w-10 h-[1px] bg-gradient-to-r from-transparent to-[#cea945]" />
             <span className="text-[#cea945] text-[10.5px] sm:text-xs font-bold uppercase tracking-[0.28em] drop-shadow-[0_0_10px_rgba(206,169,69,0.35)]">
-              The Procurement Process
+              How Mintrix Trading Works
             </span>
             <span className="w-8 sm:w-10 h-[1px] bg-gradient-to-l from-transparent to-[#cea945]" />
           </div>
@@ -126,7 +126,7 @@ export default function ProcessSection() {
                 {/* ─── Bottom-Right Radial Warmth Bloom on Hover ─── */}
                 <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-[#cea945]/0 group-hover:bg-[#cea945]/15 blur-2xl transition-all duration-700 pointer-events-none" />
 
-                {/* ─── REPLACED: Process Icon Watermark Positioned in Bottom-Right Corner ─── */}
+                {/* ─── Process Icon Watermark Positioned in Bottom-Right Corner ─── */}
                 <div className="absolute -bottom-3 -right-3 w-28 h-28 sm:w-32 sm:h-32 pointer-events-none select-none transition-all duration-700 ease-out opacity-[0.08] group-hover:opacity-[0.22] group-hover:scale-110 group-hover:-rotate-3">
                   <Image
                     src={step.icon}
