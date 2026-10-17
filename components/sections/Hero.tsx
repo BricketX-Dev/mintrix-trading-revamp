@@ -56,7 +56,7 @@ export default function Hero() {
               style={{ fontFamily: "var(--font-sacramento), cursive" }}
               className="text-[#cea945] text-[3.5rem] md:text-[4.5rem] block leading-none mb-3 -ml-1"
             >
-              Dubai-Based Food Company
+              Food Company in Dubai
             </span>
           </motion.div>
 

@@ -93,7 +93,7 @@ export default function ProductGrid({
               <span className="inline-block pr-2.5 bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
                 foodstuff supplier
               </span>{" "}
-              Dubai - 8 sourcing categories
+              Dubai 8 sourcing categories
             </h2>
               <p className="text-[#cfc8ba] text-[15px] sm:text-[16.5px] leading-[1.75] max-w-xl font-light">
                 Bulk food products UAE buyers rely on, sourced and verified for export quality with complete trade documentation.
