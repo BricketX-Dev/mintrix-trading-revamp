@@ -56,7 +56,7 @@ export default function Hero() {
               style={{ fontFamily: "var(--font-sacramento), cursive" }}
               className="text-[#cea945] text-[3.5rem] md:text-[4.5rem] block leading-none mb-3 -ml-1"
             >
-              Global Sourcing
+              Dubai-Based Food Company
             </span>
           </motion.div>
 
@@ -65,8 +65,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-white text-[2.75rem] sm:text-5xl md:text-[3.8rem] lg:text-[4.2rem] font-bold leading-[1.1] tracking-tight mb-6"
           >
-            Premium Commodities, <br className="hidden sm:block" />
-            Delivered with Trust
+            Food trading company in Dubai, <br className="hidden sm:block" />
           </motion.h1>
 
           {/* Subtext */}
@@ -74,7 +73,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-[#cfc8ba] text-[15px] md:text-[17px] leading-[1.6] max-w-[500px] mb-8 font-light"
           >
-            A UAE-registered wholesale food supplier connecting buyers with verified origins worldwide. We handle bulk sourcing, quality control, and end-to-end logistics.
+            Mintrix Trading is a UAE-registered wholesale food supplier and agricultural commodity trader. We connect buyers with verified suppliers across the world's best origins, and handle sourcing, quality, documentation and logistics — start to finish.
           </motion.p>
 
           {/* Trust Badge */}
@@ -84,7 +83,7 @@ export default function Hero() {
           >
             <div className="w-[2px] h-[34px] bg-[#cea945]" />
             <div className="text-[#e2bd76] text-[13px] md:text-[14px] font-medium tracking-wide">
-              Inquiry confirmed within the hour <span className="opacity-50 mx-1">|</span> Full quotation in 24h
+              Inquiry confirmed within the hour <span className="opacity-50 mx-1">|</span> Full quotation in 24 hours
             </div>
           </motion.div>
 
