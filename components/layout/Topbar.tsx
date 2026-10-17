@@ -63,7 +63,7 @@ export default function Topbar() {
             <span>info@mintrixtrading.com</span>
           </a>
 
-          <div className="hidden sm:block w-[1px] h-3.5 bg-white/10" />
+          <div className="hidden sm:block w-[1px] h-3.5 bg-white/10" />git
 
           {/* Phone */}
           <a
