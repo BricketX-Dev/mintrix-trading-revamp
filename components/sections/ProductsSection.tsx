@@ -91,12 +91,12 @@ export default function ProductGrid({
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold font-serif leading-[1.12] tracking-tight text-white mb-4">
               Wholesale{" "}
               <span className="inline-block pr-2.5 bg-gradient-to-r from-[#eed484] via-[#cea945] to-[#ba8d2f] bg-clip-text text-transparent italic">
-                Foodstuff
+                foodstuff supplier
               </span>{" "}
-              Dubai
+              Dubai - 8 sourcing categories
             </h2>
               <p className="text-[#cfc8ba] text-[15px] sm:text-[16.5px] leading-[1.75] max-w-xl font-light">
-                Bulk agricultural commodities UAE buyers rely on — verified for export grade, moisture thresholds, and complete customs dossiers.
+                Bulk food products UAE buyers rely on, sourced and verified for export quality with complete trade documentation.
               </p>
             </div>
 
@@ -104,7 +104,7 @@ export default function ProductGrid({
             <div className="flex items-center gap-6 sm:gap-8 px-6 sm:px-8 py-4 sm:py-5 rounded-2xl bg-[#0e1511]/85 backdrop-blur-md border border-white/[0.08] shadow-[0_15px_30px_rgba(0,0,0,0.5)] self-start md:self-auto">
               <div>
                 <span className="block text-2xl sm:text-3xl font-serif font-bold text-[#cea945]">8</span>
-                <span className="text-[10px] text-[#a89f8b] font-bold uppercase tracking-[0.2em]">Divisions</span>
+                <span className="text-[10px] text-[#a89f8b] font-bold uppercase tracking-[0.2em]">Categories</span>
               </div>
               <div className="w-px h-9 bg-white/[0.08]" />
               <div>
@@ -238,7 +238,7 @@ export default function ProductGrid({
                         {/* Hover Prompt */}
                         <div className="mt-2.5 overflow-hidden h-0 group-hover:h-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
                           <span className="text-[#cea945] text-[10px] uppercase tracking-[0.2em] font-bold flex items-center gap-1">
-                            Specifications &rarr;
+                            Explore All Products & Specifications &rarr;
                           </span>
                         </div>
                       </div>
@@ -263,7 +263,7 @@ export default function ProductGrid({
               href="/products"
               className="inline-flex items-center gap-3 bg-[#0e1511] border border-white/20 text-white font-bold text-xs uppercase tracking-[0.22em] px-9 sm:px-11 py-4 sm:py-5 rounded-xl hover:border-[#cea945] hover:text-[#cea945] hover:shadow-[0_0_25px_rgba(206,169,69,0.2)] transition-all duration-300 cursor-pointer"
             >
-              <span>View Complete Catalog</span>
+              <span>Explore All Products & Specifications</span>
               <span aria-hidden="true" className="text-sm font-bold">&rarr;</span>
             </Link>
           </motion.div>

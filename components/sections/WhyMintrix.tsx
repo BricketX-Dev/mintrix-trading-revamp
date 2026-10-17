@@ -8,15 +8,15 @@ const reasons = [
   {
     no: "01",
     title: "Verified Supplier Network",
-    desc: "Direct relationships with certified tier-1 mills and processing facilities — bypassing commercial intermediaries.",
+    desc: "We work directly with trusted manufacturers and suppliers, cutting out unnecessary intermediaries.",
     icon: "/images/why-mintrix/Verified Supplier Network.png",
-    metric: "50+ Direct Mills",
-    tag: "Direct Origin",
+    metric: "Direct Origin",
+    tag: "No Middlemen",
   },
   {
     no: "02",
-    title: "Quality-Focused Verification",
-    desc: "Rigorous pre-shipment inspections: moisture analysis, grading metrics, and batch testing before container dispatch.",
+    title: "Quality-Focused Approach",
+    desc: "Every shipment is verified for quality, specification and compliance before it leaves origin.",
     icon: "/images/why-mintrix/Quality-Focused Verification.png",
     metric: "SGS / BV Standard",
     tag: "Batch Certified",
@@ -24,31 +24,31 @@ const reasons = [
   {
     no: "03",
     title: "Global Market Reach",
-    desc: "Cross-continental logistics across 50+ source nations, delivering bulk consignments to destination ports in 14 countries.",
+    desc: "We source from the world's best origins and supply buyers across the Middle East, Africa, Europe, Asia and beyond.",
     icon: "/images/why-mintrix/Global Market Reach.png",
-    metric: "$50M+ Executed",
+    metric: "50+ Sourced",
     tag: "14 Export Ports",
   },
   {
     no: "04",
-    title: "End-to-End Compliance",
-    desc: "Halal verification, FDA-standard documentation, Certificate of Origin, and complete customs dossiers prepared in-house.",
+    title: "Complete Trade Solutions",
+    desc: "From sourcing and quality control to documentation and logistics, we manage the entire procurement cycle.",
     icon: "/images/why-mintrix/End-to-End Compliance.png",
     metric: "100% Validated",
     tag: "Customs Cleared",
   },
   {
     no: "05",
-    title: "UAE-Based Trade Desk",
-    desc: "Headquartered and registered in Dubai, offering buyers a transparent, legally secure jurisdiction for international trade.",
+    title: "UAE-Based Operations",
+    desc: "As a UAE-registered company in Dubai, we give clients a trusted, professional base for international trade.",
     icon: "/images/why-mintrix/Uae Based trade Desk.png",
     metric: "Dubai Legal Base",
     tag: "UAE Jurisdiction",
   },
   {
     no: "06",
-    title: "Dedicated Trade Manager",
-    desc: "A single accountable contact coordinating commercial pricing, vessel allocation, and transit tracking from end to end.",
+    title: "Fast Quotation & Response",
+    desc: "Quick quotations, prompt replies and efficient procurement support that keep your business moving.",
     icon: "/images/why-mintrix/Dedicated Trade Manager.png",
     metric: "Direct Line Account",
     tag: "Accountable Lead",
@@ -83,11 +83,11 @@ export default function WhyMintrix() {
             <div className="flex items-center gap-3 mb-4">
               <span className="w-8 sm:w-10 h-[2px] bg-[#cea945]" />
               <span className="text-[#8c6d23] text-[11px] sm:text-xs font-bold tracking-[0.28em] uppercase">
-                Institutional Trust
+                Why Mintrix
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#0e1712] leading-[1.12] tracking-tight">
-              The wholesale partner{" "}
+              The wholesale food supplier{" "}
               <span className="italic text-[#8c6d23]">
                 UAE buyers rely on
               </span>
@@ -96,7 +96,7 @@ export default function WhyMintrix() {
 
           <div className="lg:col-span-7">
             <p className="text-[#4e483d] text-base md:text-[17px] leading-[1.8] mb-6 font-light">
-              International commodity procurement introduces severe friction — unverified mills, moisture variance, and intricate customs logistics. Mintrix Trading acts as the definitive buffer: verifying specifications at origin, arranging compliance, and guaranteeing container transit into your destination port.
+              Sourcing food commodities across borders is hard — unverified suppliers, quality risk, customs paperwork and tangled logistics. As a Dubai-based agricultural commodity trader, Mintrix Trading takes the whole job off your desk. We source from wherever a product is best, verify it at origin, and deliver it to your door anywhere in the world. It's why UAE buyers — and the wider foodstuff trading market — increasingly default to a single partner instead of juggling multiple suppliers.
             </p>
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[11.5px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#0e1712]">
               <span>Direct Mill Contracts</span>
@@ -190,10 +190,13 @@ export default function WhyMintrix() {
           
           <div className="relative z-10 text-center sm:text-left">
             <h4 className="text-xl sm:text-2xl font-serif font-bold text-white mb-2">
-              Looking for a dependable supply partner?
+              Tell us what you need. We'll source it.
             </h4>
-            <p className="text-xs sm:text-sm text-[#cfc8ba] font-light">
-              Inquiries confirmed within the hour <span className="opacity-40 mx-2">|</span> Full specification sheet in 24 hours
+            <p className="text-xs sm:text-sm text-[#cfc8ba] font-light max-w-xl">
+              Share your product, volume and destination, and get a competitive quote within 24 hours from a Dubai-based food trading company and agricultural commodity trader that handles the entire trade for you.
+            </p>
+            <p className="text-[11px] text-[#cea945] font-bold tracking-widest uppercase mt-4">
+              B2B food sourcing inquiries <span className="opacity-40 mx-2">|</span> Reply within 24 hours
             </p>
           </div>
 
@@ -201,7 +204,7 @@ export default function WhyMintrix() {
             href="/contact"
             className="relative z-10 shrink-0 bg-[#cea945] text-[#0b0b0a] font-bold text-xs uppercase tracking-[0.2em] px-8 py-4 rounded-lg transition-all duration-300 hover:bg-white hover:text-[#0e1712] shadow-lg cursor-pointer"
           >
-            Request a Quote &rarr;
+            Get a Wholesale Quote &rarr;
           </Link>
         </motion.div>
 
