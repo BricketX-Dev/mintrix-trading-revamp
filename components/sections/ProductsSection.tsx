@@ -237,8 +237,8 @@ export default function ProductGrid({
 
                         {/* Hover Prompt */}
                         <div className="mt-2.5 overflow-hidden h-0 group-hover:h-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
-                          <span className="text-[#cea945] text-[10px] uppercase tracking-[0.2em] font-bold flex items-center gap-1">
-                            Explore All Products & Specifications &rarr;
+                          <span className="text-[#cea945] text-[10px] uppercase tracking-[0.2em] font-bold flex items-center gap-1 whitespace-nowrap">
+                            View Product Details &rarr;
                           </span>
                         </div>
                       </div>
